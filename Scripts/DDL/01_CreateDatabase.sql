@@ -1,0 +1,5 @@
+-- Crear la base de datos TURYBUS_DB
+CREATE DATABASE TURYBUS_DB;
+GO
+USE TURYBUS_DB;
+GO

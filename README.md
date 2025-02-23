@@ -162,33 +162,33 @@ El sistema permite:
 
     1.	Vw_PromedioViajeros.sql
     
-    2.	SELECT * FROM Reportes.Vw_PromedioViajeros;
+        SELECT * FROM Reportes.Vw_PromedioViajeros;
+
         o	Verifica la media de viajeros por servicio y ruta.
-    3.	Consulta_KmDiarios.sql
 
-    4.	-- Ver km recorridos según la ruta asignada a cada autobús
 
-    5.	SELECT a.matricula, a.modelo, s.id_servicio, s.hora_salida, s.hora_llegada, r.km_recorrido
+    2.	Consulta_KmDiarios.sql
+    
+        -- Ver km recorridos según la ruta asignada a cada autobús
 
-    6.	FROM Operaciones.Autobuses a
+        SELECT a.matricula, a.modelo, s.id_servicio, s.hora_salida, s.hora_llegada, r.km_recorrido
+        FROM Operaciones.Autobuses a
+        INNER JOIN Turismo.ServiciosDiarios s ON a.id_autobus = s.id_autobus
+        INNER JOIN Turismo.Rutas r ON s.id_ruta = r.id_ruta;
 
-    7.	INNER JOIN Turismo.ServiciosDiarios s ON a.id_autobus = s.id_autobus
 
-    8.	INNER JOIN Turismo.Rutas r ON s.id_ruta = r.id_ruta;
+    3.	Consulta_HorasViaje.sql
 
-    9.	Consulta_HorasViaje.sql
+        SELECT p.nombre, p.apellidos, Operaciones.fnTotalHorasViaje(p.id_pasajero) AS total_horas
+        FROM Operaciones.Pasajeros p;
 
-    10.	SELECT p.nombre, p.apellidos, Operaciones.fnTotalHorasViaje(p.id_pasajero) AS total_horas
-
-    11.	FROM Operaciones.Pasajeros p;
-
-    12.	Empleados y Promociones
+    4.	Empleados y Promociones
         o	Se registra el id_empleado en la tabla Billetes para rastrear quién realizó la venta.
         o	La lógica de promociones se puede implementar en la aplicación que consuma estos datos o con un procedimiento adicional si se desea.
 
-    13.	Revisiones y Reparaciones
+    5.	Revisiones y Reparaciones
         o	Ejecutar spRegistrarRevision para crear una revisión y obtener el id_revision resultante.
         o	Insertar reparaciones relacionadas en la tabla Reparaciones.
 
-    14.	Triggers y Transacciones
+    6.	Triggers y Transacciones
         o	Probar trgValidarCupoBillete insertando varios billetes para el mismo servicio y verificar que no se supere el número de plazas.
