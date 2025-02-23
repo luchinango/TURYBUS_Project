@@ -1,0 +1,15 @@
+# Visual Studio cache folders
+.vs/
+*.vsidx
+*.vssscc
+*.user
+*.suo
+
+# Build artifacts
+bin/
+obj/
+
+# SQL project build artifacts
+*.dacpac
+*.pdb
+*.dll
