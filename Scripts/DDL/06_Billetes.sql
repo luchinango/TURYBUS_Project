@@ -6,6 +6,6 @@ CREATE TABLE Operaciones.Billetes (     id_billete INT IDENTITY(1,1) PRIMARY KEY
     CONSTRAINT FK_Billete_Servicio FOREIGN KEY (id_servicio)        REFERENCES Turismo.ServiciosDiarios(id_servicio), 
     CONSTRAINT FK_Billete_Pasajero FOREIGN KEY (id_pasajero) 
        REFERENCES Operaciones.Pasajeros(id_pasajero) 
-    -- Se puede agregar una FK para id_empleado si se crea la tabla de Empleados 
+    -- Se puede agregar una FK para id_empleado si se crea la tabla de Empleados
 ); 
 GO 
