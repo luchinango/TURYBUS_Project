@@ -1,14 +1,22 @@
 USE TURYBUS_DB;
 GO
-CREATE TABLE Turismo.Paradas (
- id_parada INT IDENTITY(1,1) PRIMARY KEY,
- id_ruta INT NOT NULL,
- orden INT NOT NULL, -- Orden de la parada en el itinerario de viaje
- nombre_lugar VARCHAR(100) NOT NULL,
- hora_prevista TIME NOT NULL,
- actividad VARCHAR(100), -- Ejemplo: comida, visita, etc.
- tiempo_parada TIME, -- Duraci�n de la actividad
- CONSTRAINT FK_Parada_Ruta FOREIGN KEY (id_ruta)
- REFERENCES Turismo.Rutas(id_ruta)
+
+CREATE TABLE Turismo.ServiciosDiarios (
+    id_servicio INT IDENTITY(1,1) PRIMARY KEY,
+    id_ruta INT NOT NULL,
+    hora_salida TIME NOT NULL,
+    hora_llegada TIME NOT NULL,
+    dias_operacion VARCHAR(50) NOT NULL,
+    id_autobus INT NULL,       -- Se asignará con un SP
+    id_conductor INT NULL,     -- Se asignará con un SP
+
+    CONSTRAINT FK_Servicio_Ruta FOREIGN KEY (id_ruta)
+        REFERENCES Turismo.Rutas(id_ruta),
+
+    CONSTRAINT FK_Servicio_Autobus FOREIGN KEY (id_autobus)
+        REFERENCES Operaciones.Autobuses(id_autobus),
+
+    CONSTRAINT FK_Servicio_Conductor FOREIGN KEY (id_conductor)
+        REFERENCES Operaciones.Conductores(id_conductor)
 );
 GO

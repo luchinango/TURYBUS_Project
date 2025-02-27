@@ -4,7 +4,7 @@ USE TURYBUS_DB;
 CREATE PROCEDURE Operaciones.spInsertBillete 
     @id_servicio INT, 
     @id_pasajero INT, 
-    @id_empleado INT,           -- Identificador del empleado que atendió la venta 
+    @id_empleado INT,           -- Identificador del empleado que atendiï¿½ la venta 
     @fecha DATE, 
     @importe DECIMAL(10,2), 
     @hora_salida TIME, 

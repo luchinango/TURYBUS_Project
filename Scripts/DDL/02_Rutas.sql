@@ -5,6 +5,6 @@ CREATE TABLE Turismo.Rutas (
  nombre VARCHAR(100) NOT NULL,
  descripcion VARCHAR(500),
  costo_base DECIMAL(10,2) NOT NULL,
- km_recorrido INT -- Kilómetros totales de la ruta recorrida
+ km_recorrido INT -- Kilï¿½metros totales de la ruta recorrida
 );
 GO
