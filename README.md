@@ -62,6 +62,7 @@ El sistema permite:
     │   │   ├── 08_Conductores.sql
     │   │   ├── 09_Revisiones.sql
     │   │   └── 10_Reparaciones.sql
+    │   │   └── 12_empleados.sql
     │   └── /DML
     │       └── 11_InsertDatosPrueba.sql
     │
