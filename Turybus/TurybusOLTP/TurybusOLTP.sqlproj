@@ -64,6 +64,7 @@
     <Folder Include="Schema\Views" />
     <Folder Include="Schema\Programmability\Stored Procedures" />
     <Folder Include="Schema\Programmability\Functions" />
+    <Folder Include="Schema\Programmability\Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Security\Schema\Turismo.sql" />
@@ -85,5 +86,8 @@
     <Build Include="Schema\Programmability\Stored Procedures\spInsertBillete.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\spRegistrarRevision.sql" />
     <Build Include="Schema\Programmability\Functions\fnTotalHorasViaje.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Schema\Programmability\Scripts\Insercion_datos_maestros.sql" />
   </ItemGroup>
 </Project>
