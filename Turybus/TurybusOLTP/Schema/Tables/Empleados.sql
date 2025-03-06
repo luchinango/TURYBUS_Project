@@ -4,5 +4,6 @@
     nombre VARCHAR(50) NOT NULL,
     apellidos VARCHAR(50) NOT NULL,
     telefono VARCHAR(25),
-    email VARCHAR(100)
+    email VARCHAR(100), 
+    [rowversion] TIMESTAMP NOT NULL
 );
