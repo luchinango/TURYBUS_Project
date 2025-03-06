@@ -86,6 +86,17 @@
     <Build Include="Schema\Programmability\Stored Procedures\spInsertBillete.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\spRegistrarRevision.sql" />
     <Build Include="Schema\Programmability\Functions\fnTotalHorasViaje.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetDatabaseRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetAutobusesChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetEmpleadosChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetServiciosDiariosChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetBilletesChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetConductoresChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetParadasChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetPasajerosChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetReparacionesChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetRevisionesChangesByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetRutasChangesByRowVersion.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema\Programmability\Scripts\Insercion_datos_maestros.sql" />

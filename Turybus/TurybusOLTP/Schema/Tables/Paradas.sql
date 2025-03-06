@@ -5,7 +5,8 @@
  nombre_lugar VARCHAR(100) NOT NULL,
  hora_prevista TIME NOT NULL,
  actividad VARCHAR(100), -- Ejemplo: comida, visita, etc.
- tiempo_parada TIME, -- Duración de la actividad
+ tiempo_parada TIME, [rowversion] TIMESTAMP NOT NULL, 
+    -- Duración de la actividad
  CONSTRAINT FK_Parada_Ruta FOREIGN KEY (id_ruta)
  REFERENCES Turismo.Rutas(id_ruta)
 );
