@@ -5,7 +5,8 @@
     hora_llegada TIME NOT NULL,
     dias_operacion VARCHAR(50) NOT NULL,
     id_autobus INT NULL,       -- Se asignará con un SP
-    id_conductor INT NULL,     -- Se asignará con un SP
+    id_conductor INT NULL,     [rowversion] TIMESTAMP NOT NULL, 
+    -- Se asignará con un SP
 
     CONSTRAINT FK_Servicio_Ruta FOREIGN KEY (id_ruta)
         REFERENCES Turismo.Rutas(id_ruta),

@@ -8,6 +8,7 @@
     hora_salida TIME NOT NULL,
     hora_llegada TIME NOT NULL,
 
+    [rowversion] TIMESTAMP NOT NULL, 
     CONSTRAINT FK_Billete_Servicio FOREIGN KEY (id_servicio) 
         REFERENCES Turismo.ServiciosDiarios(id_servicio),
     CONSTRAINT FK_Billete_Pasajero FOREIGN KEY (id_pasajero) 

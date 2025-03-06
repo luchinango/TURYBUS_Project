@@ -4,5 +4,6 @@
 	DNI VARCHAR(20) NOT NULL UNIQUE,     
 	nombre VARCHAR(50) NOT NULL,     
 	apellidos VARCHAR(50) NOT NULL,     
-	telefono VARCHAR(25) 
+	telefono VARCHAR(25), 
+    [rowversion] TIMESTAMP NOT NULL 
 ); 
