@@ -60,6 +60,10 @@
     <Folder Include="Schema\Security" />
     <Folder Include="Schema\Security\Schema" />
     <Folder Include="Schema\Tables" />
+    <Folder Include="Schema\Tables\Staging" />
+    <Folder Include="Schema\Programmability" />
+    <Folder Include="Schema\Programmability\Stored Procedures" />
+    <Folder Include="Scripts" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Schema\Security\Schema\Staging.sql" />
@@ -71,5 +75,15 @@
     <Build Include="Schema\Tables\Dim_Pasajeros.sql" />
     <Build Include="Schema\Tables\Fact_VentasServicios.sql" />
     <Build Include="Schema\Tables\Dim_AutobusesMantenimiento.sql" />
+    <Build Include="Schema\Tables\Staging\Staging.Servicios.sql" />
+    <Build Include="Schema\Tables\Staging\Staging.Empleados.sql" />
+    <Build Include="Schema\Tables\PackageConfig.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\UpdateLastPackageRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetLastPackageRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDim_Empleados.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDim_Servicios.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\PackageConfig.data.sql" />
   </ItemGroup>
 </Project>
