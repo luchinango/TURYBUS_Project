@@ -4,6 +4,7 @@
 	codigo_reparacion VARCHAR(20) NOT NULL,
 	tiempo_empleado INT NOT NULL, -- en minutos, por ejemplo
 	comentario VARCHAR(500),
-	CONSTRAINT FK_Reparacion_Revision FOREIGN KEY (id_revision)
+	[rowversion] TIMESTAMP NOT NULL, 
+    CONSTRAINT FK_Reparacion_Revision FOREIGN KEY (id_revision)
 	REFERENCES Seguridad.Revisiones(id_revision)
 );
