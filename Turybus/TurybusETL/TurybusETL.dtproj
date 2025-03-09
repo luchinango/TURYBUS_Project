@@ -32,6 +32,8 @@
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Conductores.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Paradas.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Empleado.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Servicios.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="AutobusesMantenimiento.dtsx" SSIS:EntryPoint="1" />
         </SSIS:Packages>
         <SSIS:ConnectionManagers />
@@ -41,6 +43,7 @@
             <SSIS:PackageMetaData SSIS:Name="Conductores.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{5E410223-CA5E-4B6E-9105-879D92775F3F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Conductores</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
