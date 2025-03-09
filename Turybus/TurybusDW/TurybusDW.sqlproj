@@ -82,6 +82,10 @@
     <Build Include="Schema\Programmability\Stored Procedures\GetLastPackageRowVersion.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDim_Empleados.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDim_Servicios.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDim_Conductores.sql" />
+    <Build Include="Schema\Tables\Staging\Staging.Conductores.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDim_Paradas.sql" />
+    <Build Include="Schema\Tables\Staging\Staging.Paradas.sql" />
     <Build Include="Schema\Tables\Staging\Staging.AutobusesMantenimiento.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDim_AutobusesMantenimiento.sql" />
   </ItemGroup>
