@@ -1,0 +1,9 @@
+﻿CREATE TABLE [Staging].[Rutas]
+(
+    RutaSK INT NOT NULL,  -- Surrogate Key
+    Nombre VARCHAR(100) NOT NULL,
+    Descripcion VARCHAR(500),
+    CostoBase DECIMAL(10,2) NOT NULL,
+    KmRecorrido INT NOT NULL,
+    tiempo_recorrido INT NOT NULL,
+)
