@@ -33,6 +33,8 @@
           <SSIS:Package SSIS:Name="Conductores.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Paradas.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="VentasServicios.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Empleado.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="Servicios.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="AutobusesMantenimiento.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Pasajeros.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Rutas.dtsx" SSIS:EntryPoint="1" />
@@ -44,6 +46,7 @@
             <SSIS:PackageMetaData SSIS:Name="Conductores.dtsx">
               <SSIS:Properties>
                 <SSIS:Property SSIS:Name="ID">{5E410223-CA5E-4B6E-9105-879D92775F3F}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">Package</SSIS:Property>
                 <SSIS:Property SSIS:Name="Name">Conductores</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
@@ -546,7 +549,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=localhost;Initial Catalog=TurybusDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{E6723221-B148-4A89-927D-35F6FC833832}localhost.TurybusDW;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=localhost;Initial Catalog=TurybusDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Package-{E6723221-B148-4A89-927D-35F6FC833832}localhost.TurybusDW;Auto Translate=False;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
