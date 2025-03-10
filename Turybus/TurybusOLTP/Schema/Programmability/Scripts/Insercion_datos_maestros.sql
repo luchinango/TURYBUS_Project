@@ -110,7 +110,9 @@ VALUES
 (1, 2, 'Parada B', '08:15', 'Comida', '00:10'),
 (2, 1, 'Parada C', '09:10', 'Descanso', '00:05'),
 (2, 2, 'Parada D', '09:30', 'Comida', '00:10'),
-(3, 1, 'Parada E', '10:15', 'Descanso', '00:05');
+(3, 1, 'Parada E', '10:15', 'Descanso', '00:05'),
+(4, 1, 'Parada X', '12:10', 'Descanso', '00:05'),
+(5, 1, 'Parada Y', '14:10', 'Descanso', '00:05');
 
 -- 8. Datos en Seguridad.Revisiones
 INSERT INTO Seguridad.Revisiones (matricula_autobus, fecha_revision, diagnostico)
@@ -143,47 +145,43 @@ VALUES
 -- =============================================
 -- Inserción de 200 registros en Operaciones.Billetes  
 -- Se utiliza un CTE recursivo para generar 200 filas.
--- Para cada billete se selecciona un servicio aleatorio.
--- Si el servicio pertenece a una ruta con paradas, se calcula:
---   - Hora de salida: 5 minutos antes de la primera parada registrada.
---   - Hora de llegada: La hora prevista de la última parada a la que se suma la duración (en minutos) de esa parada.
--- Si la ruta no tiene paradas, se conservan los horarios originales del servicio.
--- El importe se basa en el costo base de la ruta más un ajuste aleatorio.
+-- Se distribuyen equitativamente los distintos id_servicio, id_pasajero e id_empleado.
 -- =============================================
 
 WITH Numeros AS (
-    SELECT 1 AS n
-    UNION ALL
-    SELECT n + 1 FROM Numeros WHERE n < 200
+    SELECT TOP 200 ROW_NUMBER() OVER (ORDER BY NEWID()) AS n
+    FROM master.dbo.spt_values
 )
 INSERT INTO Operaciones.Billetes (id_servicio, id_pasajero, id_empleado, fecha, importe, hora_salida, hora_llegada)
 SELECT
-    rndServicio.id_servicio,
-    (SELECT TOP 1 id_pasajero FROM Operaciones.Pasajeros ORDER BY NEWID()),
-    (SELECT TOP 1 id_empleado FROM Operaciones.Empleados ORDER BY NEWID()),
+    s.id_servicio,
+    p.id_pasajero,
+    e.id_empleado,
     DATEADD(day, -ABS(CHECKSUM(NEWID())) % 365, GETDATE()),
     ROUND(
-      (SELECT costo_base FROM Turismo.Rutas WHERE id_ruta = rndServicio.id_ruta)
-      + (ABS(CHECKSUM(NEWID())) % 10) * 1.00, 2
+      (r.costo_base + (ABS(CHECKSUM(NEWID())) % 10) * 1.00), 2
     ),
     -- Calcular hora de salida: si hay paradas, 5 minutos antes de la primera; si no, se usa la salida original.
-    CASE 
-      WHEN stops.first_parada IS NOT NULL 
-        THEN CONVERT(TIME, DATEADD(minute, -5, stops.first_parada))
-      ELSE rndServicio.orig_hora_salida
-    END,
+    COALESCE(CONVERT(TIME, DATEADD(minute, -5, stops.first_parada)), s.hora_salida),
     -- Calcular hora de llegada: si hay paradas, se suma la duración (en minutos) de la última parada a la hora prevista de esa parada; si no, se usa la llegada original.
-    CASE 
-      WHEN stops.last_parada IS NOT NULL 
-        THEN CONVERT(TIME, DATEADD(minute, stops.last_stop_duration, stops.last_parada))
-      ELSE rndServicio.orig_hora_llegada
-    END
-FROM Numeros
-CROSS APPLY (
-    SELECT TOP 1 s.id_servicio, s.id_ruta, s.hora_salida AS orig_hora_salida, s.hora_llegada AS orig_hora_llegada
-    FROM Turismo.ServiciosDiarios s
-    ORDER BY NEWID()
-) AS rndServicio
+    COALESCE(CONVERT(TIME, DATEADD(minute, stops.last_stop_duration, stops.last_parada)), s.hora_llegada)
+FROM Numeros n
+JOIN (
+    SELECT id_servicio, id_ruta, hora_salida, hora_llegada, 
+           ROW_NUMBER() OVER (ORDER BY NEWID()) AS rn
+    FROM Turismo.ServiciosDiarios
+) s ON n.n % (SELECT COUNT(*) FROM Turismo.ServiciosDiarios) + 1 = s.rn
+JOIN (
+    SELECT id_pasajero, 
+           ROW_NUMBER() OVER (ORDER BY NEWID()) AS rn
+    FROM Operaciones.Pasajeros
+) p ON n.n % (SELECT COUNT(*) FROM Operaciones.Pasajeros) + 1 = p.rn
+JOIN (
+    SELECT id_empleado, 
+           ROW_NUMBER() OVER (ORDER BY NEWID()) AS rn
+    FROM Operaciones.Empleados
+) e ON n.n % (SELECT COUNT(*) FROM Operaciones.Empleados) + 1 = e.rn
+JOIN Turismo.Rutas r ON r.id_ruta = s.id_ruta
 LEFT JOIN (
     SELECT 
       id_ruta,
@@ -192,5 +190,5 @@ LEFT JOIN (
       MAX(DATEDIFF(minute, '00:00', tiempo_parada)) AS last_stop_duration
     FROM Turismo.Paradas
     GROUP BY id_ruta
-) AS stops ON stops.id_ruta = rndServicio.id_ruta
+) AS stops ON stops.id_ruta = s.id_ruta
 OPTION (MAXRECURSION 0);
