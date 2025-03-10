@@ -1,50 +1,50 @@
-﻿<?xml version="1.0"?>
+<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/7/2025 9:52:05 AM"
   DTS:CreationName="Microsoft.Package"
   DTS:CreatorComputerName="DESKTOP-7CBKQ8C"
   DTS:CreatorName="DESKTOP-7CBKQ8C\Nicolas Oporto"
-  DTS:DTSID="{90FCD5F3-EB57-4EFE-8299-578CC35E4A6E}"
+  DTS:DTSID="{8F2BCC31-DFA1-4000-A82D-84631108E91B}"
   DTS:ExecutableType="Microsoft.Package"
   DTS:LastModifiedProductVersion="16.0.5685.0"
   DTS:LocaleID="16394"
   DTS:ObjectName="VentasServicios"
   DTS:PackageType="5"
   DTS:VersionBuild="45"
-  DTS:VersionGUID="{5FCAE6DB-F059-4927-845D-AF87036E8975}">
+  DTS:VersionGUID="{77D700A2-1305-4910-985D-FB96F1542CA2}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Source.TURYBUS_DB]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{D536E79F-D787-4FA9-B8DE-1078656C7FCB}"
+      DTS:DTSID="{F6718870-5B9C-4769-9274-6EEB6E1CF690}"
       DTS:ObjectName="Source.TURYBUS_DB">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=TURYBUS_DB;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{D536E79F-D787-4FA9-B8DE-1078656C7FCB}localhost.TURYBUS_DB;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=TURYBUS_DB;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{F6718870-5B9C-4769-9274-6EEB6E1CF690}localhost.TURYBUS_DB;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
       DTS:refId="Package.ConnectionManagers[Target.TurybusDW]"
       DTS:CreationName="OLEDB"
-      DTS:DTSID="{EDB96253-AFA3-47D1-B9D1-C70B2074D290}"
+      DTS:DTSID="{3DDAF312-F95B-4C6F-B290-13C43C8018B0}"
       DTS:ObjectName="Target.TurybusDW">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=localhost;Initial Catalog=TurybusDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{EDB96253-AFA3-47D1-B9D1-C70B2074D290}localhost.TurybusDW;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=TurybusDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{3DDAF312-F95B-4C6F-B290-13C43C8018B0}localhost.TurybusDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
   <DTS:Variables>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F0FADB40-A9F5-4E67-B3FE-C868F2DD2905}"
+      DTS:DTSID="{9D453244-29D8-49F6-AEE9-33DEAF5BD576}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="dbts">
@@ -53,7 +53,7 @@
     </DTS:Variable>
     <DTS:Variable
       DTS:CreationName=""
-      DTS:DTSID="{F4801574-A0B8-4E21-8D74-E6D1AB7A069D}"
+      DTS:DTSID="{721FE5FD-8D52-4C0C-B516-C96EFC6025B7}"
       DTS:IncludeInDebugDump="6789"
       DTS:Namespace="User"
       DTS:ObjectName="lastRowVersion">
@@ -66,7 +66,7 @@
       DTS:refId="Package\Clean-up Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{0BB1F07A-7303-48F0-A7CC-653F84EE499E}"
+      DTS:DTSID="{2469C343-340B-4B27-B633-BF229C7C62B5}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Clean-up Staging"
@@ -75,7 +75,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EDB96253-AFA3-47D1-B9D1-C70B2074D290}"
+          SQLTask:Connection="{3DDAF312-F95B-4C6F-B290-13C43C8018B0}"
           SQLTask:SqlStatementSource="TRUNCATE TABLE [Staging].[VentasServicios];" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -83,7 +83,7 @@
       DTS:refId="Package\Get Database RowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{9C9340FD-FCEB-4242-9CD0-9305BEA235B2}"
+      DTS:DTSID="{A6E5A07B-F818-43D9-87C6-4DB8ED1E7426}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get Database RowVersion"
@@ -92,7 +92,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{D536E79F-D787-4FA9-B8DE-1078656C7FCB}"
+          SQLTask:Connection="{F6718870-5B9C-4769-9274-6EEB6E1CF690}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetDatabaseRowVersion]"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -105,7 +105,7 @@
       DTS:refId="Package\Get LastRowVersion"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{1BF87940-E5D3-499D-8233-E9A123D3EB70}"
+      DTS:DTSID="{A7CD0CA4-C8AF-4529-A44C-8F855AC1DEDC}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Get LastRowVersion"
@@ -114,7 +114,7 @@
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EDB96253-AFA3-47D1-B9D1-C70B2074D290}"
+          SQLTask:Connection="{3DDAF312-F95B-4C6F-B290-13C43C8018B0}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[GetLastPackageRowVersion] @tableName='VentasServicios'"
           SQLTask:ResultType="ResultSetType_SingleRow" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ResultBinding
@@ -127,7 +127,7 @@
       DTS:refId="Package\Load VentasServicios"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Data Flow Task"
-      DTS:DTSID="{F680238E-8804-4ED0-B61C-8176E2DA0BE9}"
+      DTS:DTSID="{E78C86E8-A2DC-4C7D-9C0E-96A465344E0F}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
       DTS:ObjectName="Load VentasServicios"
@@ -184,7 +184,7 @@
                 <property
                   dataType="System.String"
                   description="The mappings between the parameters in the SQL command and variables."
-                  name="ParameterMapping">"@startRow:Input",{F4801574-A0B8-4E21-8D74-E6D1AB7A069D};"@endRow:Input",{F0FADB40-A9F5-4E67-B3FE-C868F2DD2905};</property>
+                  name="ParameterMapping">"@startRow:Input",{721FE5FD-8D52-4C0C-B516-C96EFC6025B7};"@endRow:Input",{9D453244-29D8-49F6-AEE9-33DEAF5BD576};</property>
               </properties>
               <connections>
                 <connection
@@ -2343,7 +2343,7 @@ where [refTable].[ServicioID] = ?</property>
       DTS:refId="Package\Sync Staging"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{4D2D9474-9CB2-41FD-9DCC-F52E57D9BBBB}"
+      DTS:DTSID="{02CA161D-103B-49F8-8125-956A4687F4B3}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Sync Staging"
@@ -2352,7 +2352,7 @@ where [refTable].[ServicioID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EDB96253-AFA3-47D1-B9D1-C70B2074D290}"
+          SQLTask:Connection="{3DDAF312-F95B-4C6F-B290-13C43C8018B0}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[DW_MergeVentasServicios]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
       </DTS:ObjectData>
     </DTS:Executable>
@@ -2360,7 +2360,7 @@ where [refTable].[ServicioID] = ?</property>
       DTS:refId="Package\Update config"
       DTS:CreationName="Microsoft.ExecuteSQLTask"
       DTS:Description="Execute SQL Task"
-      DTS:DTSID="{9A847AF0-AA5B-46B5-BBE0-0BFDD1693D80}"
+      DTS:DTSID="{E2F248AB-58E5-4125-B996-A56DE080DAF0}"
       DTS:ExecutableType="Microsoft.ExecuteSQLTask"
       DTS:LocaleID="-1"
       DTS:ObjectName="Update config"
@@ -2369,7 +2369,7 @@ where [refTable].[ServicioID] = ?</property>
       <DTS:Variables />
       <DTS:ObjectData>
         <SQLTask:SqlTaskData
-          SQLTask:Connection="{EDB96253-AFA3-47D1-B9D1-C70B2074D290}"
+          SQLTask:Connection="{3DDAF312-F95B-4C6F-B290-13C43C8018B0}"
           SQLTask:SqlStatementSource="EXECUTE [dbo].[UpdateLastPackageRowVersion] @tableName='VentasServicios',@lastRowVersion=?" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask">
           <SQLTask:ParameterBinding
             SQLTask:ParameterName="0"
@@ -2385,7 +2385,7 @@ where [refTable].[ServicioID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint]"
       DTS:CreationName=""
-      DTS:DTSID="{CAA3734F-DB6F-4364-9F7D-9AE4E0DB06E7}"
+      DTS:DTSID="{ED73BDB4-9266-468D-95C0-D57384478F30}"
       DTS:From="Package\Get Database RowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint"
@@ -2393,7 +2393,7 @@ where [refTable].[ServicioID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 1]"
       DTS:CreationName=""
-      DTS:DTSID="{43E7CC51-6178-44C3-95BF-753D501BA143}"
+      DTS:DTSID="{216E5782-5596-4904-99A5-226FD6F8D20A}"
       DTS:From="Package\Get LastRowVersion"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 1"
@@ -2401,7 +2401,7 @@ where [refTable].[ServicioID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 2]"
       DTS:CreationName=""
-      DTS:DTSID="{D400A5F5-F31F-4DBF-B256-9D3B1422DB55}"
+      DTS:DTSID="{17D6CDCA-BB49-4EEE-8076-AF4429BE57F5}"
       DTS:From="Package\Clean-up Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 2"
@@ -2409,7 +2409,7 @@ where [refTable].[ServicioID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 3]"
       DTS:CreationName=""
-      DTS:DTSID="{CAA2B8D5-4F02-437E-B1F0-3AF9F37B17C2}"
+      DTS:DTSID="{32CF4179-40DD-468D-9E37-EFC462690CA7}"
       DTS:From="Package\Load VentasServicios"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 3"
@@ -2417,7 +2417,7 @@ where [refTable].[ServicioID] = ?</property>
     <DTS:PrecedenceConstraint
       DTS:refId="Package.PrecedenceConstraints[Constraint 4]"
       DTS:CreationName=""
-      DTS:DTSID="{1FA7E2F3-5299-46CE-832B-7A5A6B939252}"
+      DTS:DTSID="{6EC0869A-2042-4616-8BAD-51814B61671A}"
       DTS:From="Package\Sync Staging"
       DTS:LogicalAnd="True"
       DTS:ObjectName="Constraint 4"
