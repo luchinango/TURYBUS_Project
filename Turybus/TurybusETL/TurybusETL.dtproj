@@ -32,6 +32,7 @@
         <SSIS:Packages>
           <SSIS:Package SSIS:Name="Conductores.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Paradas.dtsx" SSIS:EntryPoint="1" />
+          <SSIS:Package SSIS:Name="VentasServicios.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="AutobusesMantenimiento.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Pasajeros.dtsx" SSIS:EntryPoint="1" />
           <SSIS:Package SSIS:Name="Rutas.dtsx" SSIS:EntryPoint="1" />
@@ -669,16 +670,16 @@
                 </SSIS:Parameter>
               </SSIS:Parameters>
             </SSIS:PackageMetaData>
-            <SSIS:PackageMetaData SSIS:Name="Pasajeros.dtsx">
+            <SSIS:PackageMetaData SSIS:Name="VentasServicios.dtsx">
               <SSIS:Properties>
-                <SSIS:Property SSIS:Name="ID">{320E2180-0166-4378-9A52-F9A8EFD1635A}</SSIS:Property>
-                <SSIS:Property SSIS:Name="Name">Pasajeros</SSIS:Property>
+                <SSIS:Property SSIS:Name="ID">{90FCD5F3-EB57-4EFE-8299-578CC35E4A6E}</SSIS:Property>
+                <SSIS:Property SSIS:Name="Name">VentasServicios</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMajor">1</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionMinor">0</SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionBuild">17</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionBuild">33</SSIS:Property>
                 <SSIS:Property SSIS:Name="VersionComments">
                 </SSIS:Property>
-                <SSIS:Property SSIS:Name="VersionGUID">{A01DBFB4-9E41-4202-80AF-2E386DE4D314}</SSIS:Property>
+                <SSIS:Property SSIS:Name="VersionGUID">{B5FD03B8-6EF6-447D-B346-690E2EAC5641}</SSIS:Property>
                 <SSIS:Property SSIS:Name="PackageFormatVersion">8</SSIS:Property>
                 <SSIS:Property SSIS:Name="Description">
                 </SSIS:Property>
@@ -711,7 +712,7 @@
                     <SSIS:Property SSIS:Name="IncludeInDebugDump">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Required">0</SSIS:Property>
                     <SSIS:Property SSIS:Name="Sensitive">0</SSIS:Property>
-                    <SSIS:Property SSIS:Name="Value">Data Source=localhost;Initial Catalog=TURYBUS_DB;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Application Name=SSIS-Pasajeros-{3347CE69-9C29-46BA-832C-E7B41E6595F2}localhost.TURYBUS_DB;Auto Translate=False;</SSIS:Property>
+                    <SSIS:Property SSIS:Name="Value">Data Source=localhost;Initial Catalog=TURYBUS_DB;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{D536E79F-D787-4FA9-B8DE-1078656C7FCB}localhost.TURYBUS_DB;</SSIS:Property>
                     <SSIS:Property SSIS:Name="DataType">18</SSIS:Property>
                   </SSIS:Properties>
                 </SSIS:Parameter>
