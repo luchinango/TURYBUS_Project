@@ -1,6 +1,7 @@
-﻿CREATE TABLE Fact_VentasServicios (
-    VentaServicioSK INT IDENTITY(1,1) PRIMARY KEY,  -- Surrogate Key
-    Id_billete INT NOT NULL,
+﻿CREATE TABLE [Staging].[VentasServicios]
+(
+	VentaServicioSK INT,                            -- Surrogate Key
+    Id_Billete INT NOT NULL,
     ServicioSK INT NOT NULL,                        -- Surrogate Key de servicio
     FechaServicio DATE NOT NULL,
     RutaSK INT NOT NULL,                            -- Surrogate Key de ruta
@@ -14,11 +15,5 @@
     PasajeroSK INT NULL,                            -- Surrogate Key de pasajero
     EmpleadoSK INT NULL,                            -- Surrogate Key de empleado
     ParadaSK INT NULL,                              -- Surrogate Key de parada
-    FOREIGN KEY (ServicioSK) REFERENCES Dim_Servicios(ServicioSK),
-    FOREIGN KEY (RutaSK) REFERENCES Dim_Rutas(RutaSK),
-    FOREIGN KEY (AutobusSK) REFERENCES Dim_AutobusesMantenimiento(AutobusSK),
-    FOREIGN KEY (ConductorSK) REFERENCES Dim_Conductores(ConductorSK),
-    FOREIGN KEY (PasajeroSK) REFERENCES Dim_Pasajeros(PasajeroSK),
-    FOREIGN KEY (EmpleadoSK) REFERENCES Dim_Empleados(EmpleadoSK),
-    FOREIGN KEY (ParadaSK) REFERENCES Dim_Paradas(ParadaSK)
+
 )
