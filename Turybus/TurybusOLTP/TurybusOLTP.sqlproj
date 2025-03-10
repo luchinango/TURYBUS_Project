@@ -98,6 +98,7 @@
     <Build Include="Schema\Programmability\Stored Procedures\GetRevisionesChangesByRowVersion.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\GetRutasChangesByRowVersion.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\GetVentasServiciosByRowVersion.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\GetAutobusesMantenimientoChangesByRowVersion.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema\Programmability\Scripts\Insercion_datos_maestros.sql" />
