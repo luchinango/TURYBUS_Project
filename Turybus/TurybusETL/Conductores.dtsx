@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="Conductores"
   DTS:PackageType="5"
-  DTS:VersionBuild="28"
-  DTS:VersionGUID="{BC39B95C-0F4D-4446-BD06-BACA6F5B6F0F}">
+  DTS:VersionBuild="30"
+  DTS:VersionGUID="{B96BC565-8FD9-4671-8A77-03C17B9D0C75}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=Luciana\MSSQLSERVER2;Initial Catalog=TURYBUS_DB;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{1412A07C-919C-4C66-B67C-1FE6CD50D700}localhost.TURYBUS_DB;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=TURYBUS_DB;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{1412A07C-919C-4C66-B67C-1FE6CD50D700}localhost.TURYBUS_DB;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=Luciana\MSSQLSERVER2;Initial Catalog=TurybusDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{4381C632-E03C-483F-BF79-1BC8E1D00E4F}localhost.TurybusDW;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=TurybusDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{4381C632-E03C-483F-BF79-1BC8E1D00E4F}localhost.TurybusDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -997,12 +997,12 @@ where [refTable].[ConductorID] = ?</property>
       DTS:To="Package\Update config" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -1013,11 +1013,11 @@ where [refTable].[ConductorID] = ?</property>
           Id="Package\Clean-up Staging"
           TopLeft="468.000000010644,180" />
         <NodeLayout
-          Size="201,42"
+          Size="201.333333333334,42"
           Id="Package\Get Database RowVersion"
           TopLeft="444.428571431613,26.7647058816826" />
         <NodeLayout
-          Size="173,42"
+          Size="173.333333333334,42"
           Id="Package\Get LastRowVersion"
           TopLeft="462,102" />
         <NodeLayout
@@ -1029,7 +1029,7 @@ where [refTable].[ConductorID] = ?</property>
           Id="Package\Sync Staging"
           TopLeft="468.714285715806,333.235294118317" />
         <NodeLayout
-          Size="147,42"
+          Size="146.666666666667,42"
           Id="Package\Update config"
           TopLeft="448,416" />
         <EdgeLayout

@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="Paradas"
   DTS:PackageType="5"
-  DTS:VersionBuild="36"
-  DTS:VersionGUID="{D762E4C7-0C9A-4BCF-A070-313FF795C7A1}">
+  DTS:VersionBuild="38"
+  DTS:VersionGUID="{FD2FDC80-0119-45EB-B531-68223D066353}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -25,7 +25,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=Luciana\MSSQLSERVER2;Initial Catalog=TURYBUS_DB;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{A7E80693-F6FD-4C82-BC46-D0160911EE73}localhost.TURYBUS_DB;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=TURYBUS_DB;Provider=MSOLEDBSQL.1;Persist Security Info=False;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{A7E80693-F6FD-4C82-BC46-D0160911EE73}localhost.TURYBUS_DB;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
@@ -37,7 +37,7 @@
         <DTS:ConnectionManager
           DTS:ConnectRetryCount="1"
           DTS:ConnectRetryInterval="5"
-          DTS:ConnectionString="Data Source=Luciana\MSSQLSERVER2;Initial Catalog=TurybusDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{E6723221-B148-4A89-927D-35F6FC833832}localhost.TurybusDW;" />
+          DTS:ConnectionString="Data Source=localhost;Initial Catalog=TurybusDW;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{E6723221-B148-4A89-927D-35F6FC833832}localhost.TurybusDW;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -971,12 +971,12 @@ where [refTable].[ParadaID] = ?</property>
       DTS:To="Package\Update config" />
   </DTS:PrecedenceConstraints>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
-<!--Esta sección CDATA contiene la información de diseño del paquete. Esta sección incluye información como, por ejemplo, las coordenadas (x,y), el ancho y el alto.-->
-<!--Si edita manualmente esta sección y comete un error, puede eliminarlo. -->
-<!--El paquete podrá cargarse normalmente, pero se perderá la información de diseño anterior y el diseñador reorganizará los elementos automáticamente en la superficie de diseño.-->
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
 <Objects
   Version="8">
-  <!--Cada uno de los nodos siguientes contiene propiedades que no afectan al comportamiento en tiempo de ejecución.-->
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
   <Package
     design-time-name="Package">
     <LayoutInfo>
@@ -987,15 +987,15 @@ where [refTable].[ParadaID] = ?</property>
           Id="Package\Clean-up Staging"
           TopLeft="468.000000010644,180" />
         <NodeLayout
-          Size="209,42"
+          Size="209.333333333334,42"
           Id="Package\Get Database RowVersion"
           TopLeft="444.428571431613,26.7647058816826" />
         <NodeLayout
-          Size="173,42"
+          Size="173.333333333334,42"
           Id="Package\Get LastRowVersion"
           TopLeft="462,102" />
         <NodeLayout
-          Size="151,42"
+          Size="150.666666666667,42"
           Id="Package\Load Servicios"
           TopLeft="468.142857147419,254.764705881683" />
         <NodeLayout
@@ -1003,7 +1003,7 @@ where [refTable].[ParadaID] = ?</property>
           Id="Package\Sync Staging"
           TopLeft="468.714285715806,333.235294118317" />
         <NodeLayout
-          Size="147,42"
+          Size="146.666666666667,42"
           Id="Package\Update config"
           TopLeft="448,416" />
         <EdgeLayout
@@ -1137,21 +1137,21 @@ where [refTable].[ParadaID] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="139,42"
-          Id="Package\Load Servicios\Load staging"
-          TopLeft="281.857142863225,336.470588236635" />
-        <NodeLayout
-          Size="115,42"
+          Size="114.666666666667,42"
           Id="Package\Load Servicios\Lookup"
           TopLeft="378.999999978713,227.235294129712" />
         <NodeLayout
-          Size="141,42"
+          Size="138.666666666667,42"
+          Id="Package\Load Servicios\Load staging"
+          TopLeft="281.857142863225,336.470588236635" />
+        <NodeLayout
+          Size="146.666666666667,42"
+          Id="Package\Load Servicios\Load Paradas"
+          TopLeft="537.089285520228,339.712074325273" />
+        <NodeLayout
+          Size="141.333333333334,42"
           Id="Package\Load Servicios\Get Paradas"
           TopLeft="364.000000010643,123.058823526731" />
-        <NodeLayout
-          Size="147,42"
-          Id="Package\Load Servicios\Load Paradas"
-          TopLeft="532.714285715806,341.764705881683" />
         <EdgeLayout
           Id="Package\Load Servicios.Paths[OLE DB Source Output]"
           TopLeft="435.499999994678,165.058823526731">
@@ -1176,37 +1176,37 @@ where [refTable].[ParadaID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Servicios.Paths[Lookup No Match Output]"
-          TopLeft="454.333333312046,269.235294129712">
+          TopLeft="454.111111089824,269.235294129712">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="151.88095240376,72.5294117519711"
+              EndConnector="156.311507763737,70.4767801955611"
               Start="0,0"
-              End="151.88095240376,65.0294117519711">
+              End="156.311507763737,62.9767801955611">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.6089193773055" />
+                    End="0,24.7726304468116" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,25.6089193773055"
-                    Point2="0,29.6089193773055"
-                    Point3="4,29.6089193773055" />
+                    Point1="0,24.7726304468116"
+                    Point2="0,28.7726304468116"
+                    Point3="4,28.7726304468116" />
                   <mssgle:LineSegment
-                    End="147.88095240376,29.6089193773055" />
+                    End="152.311507763737,28.7726304468116" />
                   <mssgle:CubicBezierSegment
-                    Point1="147.88095240376,29.6089193773055"
-                    Point2="151.88095240376,29.6089193773055"
-                    Point3="151.88095240376,33.6089193773055" />
+                    Point1="152.311507763737,28.7726304468116"
+                    Point2="156.311507763737,28.7726304468116"
+                    Point3="156.311507763737,32.7726304468116" />
                   <mssgle:LineSegment
-                    End="151.88095240376,65.0294117519711" />
+                    End="156.311507763737,62.9767801955611" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="20.1340894831298,34.6089193773055,111.6127734375,11.609375"
+              BoundingBox="22.3493671631187,33.7726304468116,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1250,6 +1250,29 @@ where [refTable].[ParadaID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
+    design-time-name="Package\Load Servicios\Lookup">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Paradas]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
     design-time-name="Package\Load Servicios\Load staging">
     <Properties>
       <Property>
@@ -1263,37 +1286,6 @@ where [refTable].[ParadaID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load Servicios\Lookup">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Paradas]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Servicios\Get Paradas">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
     design-time-name="Package\Load Servicios\Load Paradas">
     <Properties>
       <Property>
@@ -1303,6 +1295,14 @@ where [refTable].[ParadaID] = ?</property>
         <Name>TableInfoObjectType</Name>
         <Value
           type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Servicios\Get Paradas">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
       </Property>
     </Properties>
   </PipelineComponentMetadata>

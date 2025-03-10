@@ -1,5 +1,6 @@
 ﻿CREATE TABLE Fact_VentasServicios (
     VentaServicioSK INT IDENTITY(1,1) PRIMARY KEY,  -- Surrogate Key
+    Id_billete INT NOT NULL,
     ServicioSK INT NOT NULL,                        -- Surrogate Key de servicio
     FechaServicio DATE NOT NULL,
     RutaSK INT NOT NULL,                            -- Surrogate Key de ruta

@@ -86,6 +86,8 @@
     <Build Include="Schema\Tables\Staging\Staging.Conductores.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDim_Paradas.sql" />
     <Build Include="Schema\Tables\Staging\Staging.Paradas.sql" />
+    <Build Include="Schema\Tables\Staging\Staging.VentasServicios.sql" />
+    <Build Include="Schema\Programmability\Stored Procedures\DW_MergeVentasServicios.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\PackageConfig.data.sql" />
