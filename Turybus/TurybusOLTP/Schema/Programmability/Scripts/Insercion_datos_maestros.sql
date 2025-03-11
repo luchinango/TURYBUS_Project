@@ -77,17 +77,19 @@ VALUES
 ('Ruta 5', 'Recorrido nocturno', 6.00, 25, 40);
 
 -- 6. Datos en Turismo.ServiciosDiarios  
--- Se calcula la hora_llegada como: hora_salida + tiempo_recorrido de la ruta.
+-- Inserción de datos en Turismo.ServiciosDiarios
+-- Se distribuyen los autobuses y conductores de manera equitativa.
+-- =============================================
+
 INSERT INTO Turismo.ServiciosDiarios (id_ruta, hora_salida, hora_llegada, dias_operacion, id_autobus, id_conductor)
-SELECT
+SELECT 
     s.id_ruta,
     s.hora_salida,
     CONVERT(TIME, DATEADD(MINUTE, r.tiempo_recorrido, s.hora_salida)) AS hora_llegada,
     s.dias_operacion,
-    (SELECT TOP 1 id_autobus FROM Operaciones.Autobuses ORDER BY NEWID()),
-    (SELECT TOP 1 id_conductor FROM Operaciones.Conductores ORDER BY NEWID())
-FROM
-(
+    a.id_autobus,
+    c.id_conductor
+FROM (
     VALUES
     (1, '08:00', 'Lunes,Martes,Miércoles,Jueves,Viernes'),
     (2, '09:00', 'Lunes,Miércoles,Viernes'),
@@ -100,7 +102,15 @@ FROM
     (4, '20:00', 'Lunes a Viernes'),
     (5, '22:00', 'Martes,Jueves,Sábado')
 ) AS s(id_ruta, hora_salida, dias_operacion)
-JOIN Turismo.Rutas r ON r.id_ruta = s.id_ruta;
+JOIN Turismo.Rutas r ON r.id_ruta = s.id_ruta
+JOIN (
+    SELECT id_autobus, ROW_NUMBER() OVER (ORDER BY NEWID()) AS rn
+    FROM Operaciones.Autobuses
+) a ON (s.id_ruta % (SELECT COUNT(*) FROM Operaciones.Autobuses)) + 1 = a.rn
+JOIN (
+    SELECT id_conductor, ROW_NUMBER() OVER (ORDER BY NEWID()) AS rn
+    FROM Operaciones.Conductores
+) c ON (s.id_ruta % (SELECT COUNT(*) FROM Operaciones.Conductores)) + 1 = c.rn;
 
 -- 7. Datos en Turismo.Paradas  
 -- Se definen paradas para algunas rutas; si una ruta no tiene paradas, se conservarán los horarios originales.
