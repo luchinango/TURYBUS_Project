@@ -102,5 +102,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Schema\Programmability\Scripts\Insercion_datos_maestros.sql" />
+    <None Include="Schema\Programmability\Scripts\clean.data.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <PostDeploy Include="Schema\Programmability\Scripts\Script.PostDeployment1.sql" />
   </ItemGroup>
 </Project>
