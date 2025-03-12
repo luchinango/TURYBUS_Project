@@ -11,3 +11,5 @@ Post-Deployment Script Template
 */
 
 :r .\PackageConfig.data.sql
+:r .\CleanData.sql
+:r .\PackageConfig.data.sql
