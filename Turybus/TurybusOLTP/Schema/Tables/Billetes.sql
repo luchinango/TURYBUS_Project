@@ -2,7 +2,7 @@
     id_billete INT IDENTITY(1,1) PRIMARY KEY,
     id_servicio INT NOT NULL,
     id_pasajero INT NOT NULL,
-    id_empleado INT NULL,
+    id_empleado INT NOT NULL,
     fecha DATE NOT NULL,
     importe DECIMAL(10,2) NOT NULL,
     hora_salida TIME NOT NULL,

@@ -1,5 +1,5 @@
 ﻿CREATE TABLE Staging.AutobusesMantenimiento (
-    AutobusSK INT NULL ,  -- Surrogate Key
+    AutobusSK INT NOT NULL ,  -- Surrogate Key
     AutobusID INT NOT NULL,                   -- Business Key
     Matricula VARCHAR(50) NOT NULL UNIQUE,    -- Matrícula del autobús
     Modelo VARCHAR(50) NOT NULL,              -- Modelo del autobús

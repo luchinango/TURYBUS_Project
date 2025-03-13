@@ -1,0 +1,704 @@
+{
+  "name": "SemanticModel",
+  "compatibilityLevel": 1200,
+  "model": {
+    "culture": "es-BO",
+    "dataSources": [
+      {
+        "name": "SqlServer DESKTOP-7CBKQ8C TurybusDW",
+        "connectionString": "Provider=SQLOLEDB;Data Source=DESKTOP-7CBKQ8C;Initial Catalog=TurybusDW;User ID=sa;Persist Security Info=false",
+        "impersonationMode": "impersonateServiceAccount",
+        "annotations": [
+          {
+            "name": "ConnectionEditUISource",
+            "value": "SqlServer"
+          }
+        ]
+      }
+    ],
+    "tables": [
+      {
+        "name": "Dim_AutobusesMantenimiento",
+        "columns": [
+          {
+            "name": "AutobusSK",
+            "dataType": "int64",
+            "sourceColumn": "AutobusSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "AutobusID",
+            "dataType": "int64",
+            "sourceColumn": "AutobusID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Matricula",
+            "dataType": "string",
+            "sourceColumn": "Matricula",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Modelo",
+            "dataType": "string",
+            "sourceColumn": "Modelo",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Fabricante",
+            "dataType": "string",
+            "sourceColumn": "Fabricante",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Plazas",
+            "dataType": "int64",
+            "sourceColumn": "Plazas",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Caracteristicas",
+            "dataType": "string",
+            "sourceColumn": "Caracteristicas",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "FechaRevision",
+            "dataType": "string",
+            "sourceColumn": "FechaRevision",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Diagnostico",
+            "dataType": "string",
+            "sourceColumn": "Diagnostico",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CodigoReparacion",
+            "dataType": "string",
+            "sourceColumn": "CodigoReparacion",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "TiempoEmpleado",
+            "dataType": "int64",
+            "sourceColumn": "TiempoEmpleado",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Comentario",
+            "dataType": "string",
+            "sourceColumn": "Comentario",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_AutobusesMantenimiento",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_AutobusesMantenimiento].*   FROM [dbo].[Dim_AutobusesMantenimiento] ",
+              "dataSource": "SqlServer DESKTOP-7CBKQ8C TurybusDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_AutobusesMantenimiento].*   FROM [dbo].[Dim_AutobusesMantenimiento] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_AutobusesMantenimiento"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Conductores",
+        "columns": [
+          {
+            "name": "ConductorSK",
+            "dataType": "int64",
+            "sourceColumn": "ConductorSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ConductorID",
+            "dataType": "int64",
+            "sourceColumn": "ConductorID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DNI",
+            "dataType": "string",
+            "sourceColumn": "DNI",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Apellidos",
+            "dataType": "string",
+            "sourceColumn": "Apellidos",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Telefono",
+            "dataType": "string",
+            "sourceColumn": "Telefono",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Direccion",
+            "dataType": "string",
+            "sourceColumn": "Direccion",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Conductores",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Conductores].*   FROM [dbo].[Dim_Conductores] ",
+              "dataSource": "SqlServer DESKTOP-7CBKQ8C TurybusDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Conductores].*   FROM [dbo].[Dim_Conductores] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Conductores"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Empleados",
+        "columns": [
+          {
+            "name": "EmpleadoSK",
+            "dataType": "int64",
+            "sourceColumn": "EmpleadoSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EmpleadoID",
+            "dataType": "int64",
+            "sourceColumn": "EmpleadoID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DNI",
+            "dataType": "string",
+            "sourceColumn": "DNI",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Apellidos",
+            "dataType": "string",
+            "sourceColumn": "Apellidos",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Telefono",
+            "dataType": "string",
+            "sourceColumn": "Telefono",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Email",
+            "dataType": "string",
+            "sourceColumn": "Email",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Empleados",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Empleados].*   FROM [dbo].[Dim_Empleados] ",
+              "dataSource": "SqlServer DESKTOP-7CBKQ8C TurybusDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Empleados].*   FROM [dbo].[Dim_Empleados] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Empleados"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Paradas",
+        "columns": [
+          {
+            "name": "ParadaSK",
+            "dataType": "int64",
+            "sourceColumn": "ParadaSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ParadaID",
+            "dataType": "int64",
+            "sourceColumn": "ParadaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "NombreLugar",
+            "dataType": "string",
+            "sourceColumn": "NombreLugar",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "HoraPrevista",
+            "dataType": "string",
+            "sourceColumn": "HoraPrevista",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "Actividad",
+            "dataType": "string",
+            "sourceColumn": "Actividad",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "TiempoParada",
+            "dataType": "string",
+            "sourceColumn": "TiempoParada",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Paradas",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Paradas].*   FROM [dbo].[Dim_Paradas] ",
+              "dataSource": "SqlServer DESKTOP-7CBKQ8C TurybusDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Paradas].*   FROM [dbo].[Dim_Paradas] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Paradas"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Pasajeros",
+        "columns": [
+          {
+            "name": "PasajeroSK",
+            "dataType": "int64",
+            "sourceColumn": "PasajeroSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "PasajeroID",
+            "dataType": "int64",
+            "sourceColumn": "PasajeroID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DNI",
+            "dataType": "string",
+            "sourceColumn": "DNI",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Apellidos",
+            "dataType": "string",
+            "sourceColumn": "Apellidos",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Telefono",
+            "dataType": "string",
+            "sourceColumn": "Telefono",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Pasajeros",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Pasajeros].*   FROM [dbo].[Dim_Pasajeros] ",
+              "dataSource": "SqlServer DESKTOP-7CBKQ8C TurybusDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Pasajeros].*   FROM [dbo].[Dim_Pasajeros] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Pasajeros"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Rutas",
+        "columns": [
+          {
+            "name": "RutaSK",
+            "dataType": "int64",
+            "sourceColumn": "RutaSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "RutaID",
+            "dataType": "int64",
+            "sourceColumn": "RutaID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Nombre",
+            "dataType": "string",
+            "sourceColumn": "Nombre",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "Descripcion",
+            "dataType": "string",
+            "sourceColumn": "Descripcion",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CostoBase",
+            "dataType": "double",
+            "sourceColumn": "CostoBase",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "KmRecorrido",
+            "dataType": "int64",
+            "sourceColumn": "KmRecorrido",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "tiempo_recorrido",
+            "dataType": "int64",
+            "sourceColumn": "tiempo_recorrido",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Rutas",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Rutas].*   FROM [dbo].[Dim_Rutas] ",
+              "dataSource": "SqlServer DESKTOP-7CBKQ8C TurybusDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Rutas].*   FROM [dbo].[Dim_Rutas] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Rutas"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Dim_Servicios",
+        "columns": [
+          {
+            "name": "ServicioSK",
+            "dataType": "int64",
+            "sourceColumn": "ServicioSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ServicioID",
+            "dataType": "int64",
+            "sourceColumn": "ServicioID",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "HoraSalida",
+            "dataType": "string",
+            "sourceColumn": "HoraSalida",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "HoraLlegada",
+            "dataType": "string",
+            "sourceColumn": "HoraLlegada",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DiasOperacion",
+            "dataType": "string",
+            "sourceColumn": "DiasOperacion",
+            "sourceProviderType": "Char"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Servicios",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Servicios].*   FROM [dbo].[Dim_Servicios] ",
+              "dataSource": "SqlServer DESKTOP-7CBKQ8C TurybusDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Servicios].*   FROM [dbo].[Dim_Servicios] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Servicios"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Fact_VentasServicios",
+        "columns": [
+          {
+            "name": "VentaServicioSK",
+            "dataType": "int64",
+            "sourceColumn": "VentaServicioSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "Id_billete",
+            "dataType": "int64",
+            "sourceColumn": "Id_billete",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ServicioSK",
+            "dataType": "int64",
+            "sourceColumn": "ServicioSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FechaServicio",
+            "dataType": "string",
+            "sourceColumn": "FechaServicio",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "RutaSK",
+            "dataType": "int64",
+            "sourceColumn": "RutaSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "AutobusSK",
+            "dataType": "int64",
+            "sourceColumn": "AutobusSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ConductorSK",
+            "dataType": "int64",
+            "sourceColumn": "ConductorSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DuracionMinutos_billete",
+            "dataType": "int64",
+            "sourceColumn": "DuracionMinutos_billete",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DiasOperacion",
+            "dataType": "string",
+            "sourceColumn": "DiasOperacion",
+            "sourceProviderType": "Char"
+          },
+          {
+            "name": "CantidadBilletesVendidos",
+            "dataType": "int64",
+            "sourceColumn": "CantidadBilletesVendidos",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "IngresoTotal",
+            "dataType": "double",
+            "sourceColumn": "IngresoTotal",
+            "sourceProviderType": "Numeric"
+          },
+          {
+            "name": "PasajeroSK",
+            "dataType": "int64",
+            "sourceColumn": "PasajeroSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "EmpleadoSK",
+            "dataType": "int64",
+            "sourceColumn": "EmpleadoSK",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "ParadaSK",
+            "dataType": "int64",
+            "sourceColumn": "ParadaSK",
+            "sourceProviderType": "Integer"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Fact_VentasServicios",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Fact_VentasServicios].*   FROM [dbo].[Fact_VentasServicios] ",
+              "dataSource": "SqlServer DESKTOP-7CBKQ8C TurybusDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Fact_VentasServicios].*   FROM [dbo].[Fact_VentasServicios] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Fact_VentasServicios"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      }
+    ],
+    "relationships": [
+      {
+        "name": "aa3289d9-0ec3-4985-81a6-8b331079c35c",
+        "fromTable": "Fact_VentasServicios",
+        "fromColumn": "AutobusSK",
+        "toTable": "Dim_AutobusesMantenimiento",
+        "toColumn": "AutobusSK"
+      },
+      {
+        "name": "663cefda-8749-4c73-9141-c1d1e4e6e964",
+        "fromTable": "Fact_VentasServicios",
+        "fromColumn": "ConductorSK",
+        "toTable": "Dim_Conductores",
+        "toColumn": "ConductorSK"
+      },
+      {
+        "name": "4f6cbb98-08ec-483b-9d01-3d3e2afc7874",
+        "fromTable": "Fact_VentasServicios",
+        "fromColumn": "EmpleadoSK",
+        "toTable": "Dim_Empleados",
+        "toColumn": "EmpleadoSK"
+      },
+      {
+        "name": "8602e25e-8d66-48b2-a651-43fca06a75f7",
+        "fromTable": "Fact_VentasServicios",
+        "fromColumn": "ParadaSK",
+        "toTable": "Dim_Paradas",
+        "toColumn": "ParadaSK"
+      },
+      {
+        "name": "18554c01-fdb0-4dc6-8abf-3418fe4a610b",
+        "fromTable": "Fact_VentasServicios",
+        "fromColumn": "PasajeroSK",
+        "toTable": "Dim_Pasajeros",
+        "toColumn": "PasajeroSK"
+      },
+      {
+        "name": "d78c9e07-964a-41c5-8887-4b6a8607943d",
+        "fromTable": "Fact_VentasServicios",
+        "fromColumn": "RutaSK",
+        "toTable": "Dim_Rutas",
+        "toColumn": "RutaSK"
+      },
+      {
+        "name": "8a56571c-3bbb-49a9-b121-3a9d311b2530",
+        "fromTable": "Fact_VentasServicios",
+        "fromColumn": "ServicioSK",
+        "toTable": "Dim_Servicios",
+        "toColumn": "ServicioSK"
+      }
+    ],
+    "annotations": [
+      {
+        "name": "ClientCompatibilityLevel",
+        "value": "400"
+      }
+    ]
+  },
+  "id": "SemanticModel"
+}

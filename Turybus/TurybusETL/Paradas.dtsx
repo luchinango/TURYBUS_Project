@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="3/7/2025 9:52:05 AM"
@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="Paradas"
   DTS:PackageType="5"
-  DTS:VersionBuild="38"
-  DTS:VersionGUID="{BFF46B46-40A4-4066-9DA6-48F71F0D0198}">
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{61F06D21-633D-48D5-B3B7-E53E8BB2E8F1}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -540,11 +540,11 @@
               </outputs>
             </component>
             <component
-              refId="Package\Load Servicios\Load staging"
+              refId="Package\Load Servicios\Load Staging"
               componentClassID="Microsoft.OLEDBDestination"
               contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
               description="OLE DB Destination"
-              name="Load staging"
+              name="Load Staging"
               usesDispositions="true"
               version="4">
               <properties>
@@ -555,7 +555,7 @@
                 <property
                   dataType="System.String"
                   description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Dim_Paradas]</property>
+                  name="OpenRowset">[Staging].[Paradas]</property>
                 <property
                   dataType="System.String"
                   description="Specifies the variable that contains the name of the database object used to open a rowset."
@@ -597,7 +597,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load Servicios\Load staging.Connections[OleDbConnection]"
+                  refId="Package\Load Servicios\Load Staging.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Target.TurybusDW]"
                   connectionManagerRefId="Package.ConnectionManagers[Target.TurybusDW]"
                   description="The OLE DB runtime connection used to access the database."
@@ -605,78 +605,74 @@
               </connections>
               <inputs>
                 <input
-                  refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input]"
+                  refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input]"
                   errorOrTruncationOperation="Insert"
                   errorRowDisposition="FailComponent"
                   hasSideEffects="true"
                   name="OLE DB Destination Input">
                   <inputColumns>
                     <inputColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].Columns[actividad]"
+                      refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].Columns[actividad]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="actividad"
-                      externalMetadataColumnId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[Actividad]"
+                      externalMetadataColumnId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Actividad]"
                       lineageId="Package\Load Servicios\Get Paradas.Outputs[OLE DB Source Output].Columns[actividad]" />
                     <inputColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].Columns[ParadaID]"
+                      refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].Columns[ParadaSK]"
                       cachedDataType="i4"
-                      cachedName="ParadaID"
-                      externalMetadataColumnId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[ParadaID]"
-                      lineageId="Package\Load Servicios\Lookup.Outputs[Lookup Match Output].Columns[ParadaID]" />
+                      cachedName="ParadaSK"
+                      externalMetadataColumnId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[ParadaSK]"
+                      lineageId="Package\Load Servicios\Lookup.Outputs[Lookup Match Output].Columns[ParadaSK]" />
                     <inputColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].Columns[nombre_lugar]"
+                      refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].Columns[nombre_lugar]"
                       cachedCodepage="1252"
                       cachedDataType="str"
                       cachedLength="100"
                       cachedName="nombre_lugar"
-                      externalMetadataColumnId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[NombreLugar]"
+                      externalMetadataColumnId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[NombreLugar]"
                       lineageId="Package\Load Servicios\Get Paradas.Outputs[OLE DB Source Output].Columns[nombre_lugar]" />
                     <inputColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].Columns[hora_prevista]"
+                      refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].Columns[hora_prevista]"
                       cachedDataType="dbTime2"
                       cachedName="hora_prevista"
                       cachedScale="7"
-                      externalMetadataColumnId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[HoraPrevista]"
+                      externalMetadataColumnId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[HoraPrevista]"
                       lineageId="Package\Load Servicios\Get Paradas.Outputs[OLE DB Source Output].Columns[hora_prevista]" />
                     <inputColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].Columns[tiempo_parada]"
+                      refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].Columns[tiempo_parada]"
                       cachedDataType="dbTime2"
                       cachedName="tiempo_parada"
                       cachedScale="7"
-                      externalMetadataColumnId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[TiempoParada]"
+                      externalMetadataColumnId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[TiempoParada]"
                       lineageId="Package\Load Servicios\Get Paradas.Outputs[OLE DB Source Output].Columns[tiempo_parada]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[ParadaSK]"
+                      refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[ParadaSK]"
                       dataType="i4"
                       name="ParadaSK" />
                     <externalMetadataColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[ParadaID]"
-                      dataType="i4"
-                      name="ParadaID" />
-                    <externalMetadataColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[NombreLugar]"
+                      refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[NombreLugar]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="NombreLugar" />
                     <externalMetadataColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[HoraPrevista]"
+                      refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[HoraPrevista]"
                       dataType="dbTime2"
                       name="HoraPrevista"
                       scale="7" />
                     <externalMetadataColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[Actividad]"
+                      refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Actividad]"
                       codePage="1252"
                       dataType="str"
                       length="100"
                       name="Actividad" />
                     <externalMetadataColumn
-                      refId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input].ExternalColumns[TiempoParada]"
+                      refId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[TiempoParada]"
                       dataType="dbTime2"
                       name="TiempoParada"
                       scale="7" />
@@ -685,22 +681,22 @@
               </inputs>
               <outputs>
                 <output
-                  refId="Package\Load Servicios\Load staging.Outputs[OLE DB Destination Error Output]"
+                  refId="Package\Load Servicios\Load Staging.Outputs[OLE DB Destination Error Output]"
                   exclusionGroup="1"
                   isErrorOut="true"
                   name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input]">
+                  synchronousInputId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Servicios\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      refId="Package\Load Servicios\Load Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load Servicios\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load Servicios\Load Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load Servicios\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load Servicios\Load Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load Servicios\Load staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load Servicios\Load Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -817,17 +813,17 @@ where [refTable].[ParadaID] = ?</property>
                   synchronousInputId="Package\Load Servicios\Lookup.Inputs[Lookup Input]">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load Servicios\Lookup.Outputs[Lookup Match Output].Columns[ParadaID]"
+                      refId="Package\Load Servicios\Lookup.Outputs[Lookup Match Output].Columns[ParadaSK]"
                       dataType="i4"
                       errorOrTruncationOperation="Copy Column"
-                      lineageId="Package\Load Servicios\Lookup.Outputs[Lookup Match Output].Columns[ParadaID]"
-                      name="ParadaID"
+                      lineageId="Package\Load Servicios\Lookup.Outputs[Lookup Match Output].Columns[ParadaSK]"
+                      name="ParadaSK"
                       truncationRowDisposition="FailComponent">
                       <properties>
                         <property
                           dataType="System.String"
                           description="Specifies the column in the reference table from which a column is copied."
-                          name="CopyFromReferenceColumn">ParadaID</property>
+                          name="CopyFromReferenceColumn">ParadaSK</property>
                       </properties>
                     </outputColumn>
                   </outputColumns>
@@ -869,7 +865,7 @@ where [refTable].[ParadaID] = ?</property>
           <paths>
             <path
               refId="Package\Load Servicios.Paths[Lookup Match Output]"
-              endId="Package\Load Servicios\Load staging.Inputs[OLE DB Destination Input]"
+              endId="Package\Load Servicios\Load Staging.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
               startId="Package\Load Servicios\Lookup.Outputs[Lookup Match Output]" />
             <path
@@ -983,27 +979,27 @@ where [refTable].[ParadaID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="158,42"
+          Size="158.4,41.6"
           Id="Package\Clean-up Staging"
-          TopLeft="468.000000010644,180" />
+          TopLeft="469.428571442257,180" />
         <NodeLayout
-          Size="209.333333333334,42"
+          Size="209.6,41.6"
           Id="Package\Get Database RowVersion"
           TopLeft="444.428571431613,26.7647058816826" />
         <NodeLayout
-          Size="173.333333333334,42"
+          Size="173.6,41.6"
           Id="Package\Get LastRowVersion"
           TopLeft="462,102" />
         <NodeLayout
-          Size="150.666666666667,42"
+          Size="150.4,41.6"
           Id="Package\Load Servicios"
-          TopLeft="468.142857147419,254.764705881683" />
+          TopLeft="470.285714294838,254.764705881683" />
         <NodeLayout
-          Size="140,42"
+          Size="140,41.6"
           Id="Package\Sync Staging"
-          TopLeft="468.714285715806,333.235294118317" />
+          TopLeft="470.142857147418,333.235294118317" />
         <NodeLayout
-          Size="146.666666666667,42"
+          Size="146.4,41.6"
           Id="Package\Update config"
           TopLeft="448,416" />
         <EdgeLayout
@@ -1030,7 +1026,7 @@ where [refTable].[ParadaID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 1]"
-          TopLeft="547.800000005322,143.6">
+          TopLeft="548.714285721128,143.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
@@ -1052,18 +1048,18 @@ where [refTable].[ParadaID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="545.321428579032,222">
+          TopLeft="547.057142868547,221.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,32.764705881683"
+              EndConnector="0,33.164705881683"
               Start="0,0"
-              End="0,25.264705881683">
+              End="0,25.664705881683">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,25.264705881683" />
+                    End="0,25.664705881683" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1074,18 +1070,18 @@ where [refTable].[ParadaID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="541.178571431612,296.764705881683">
+          TopLeft="542.814285721128,296.364705881683">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,36.470588236634"
+              EndConnector="0,36.8705882366339"
               Start="0,0"
-              End="0,28.970588236634">
+              End="0,29.3705882366339">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,28.970588236634" />
+                    End="0,29.3705882366339" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1096,30 +1092,30 @@ where [refTable].[ParadaID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="538.714285715806,375.235294118317">
+          TopLeft="540.142857147418,374.835294118317">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-17.214285715806,40.764705881683"
+              EndConnector="-18.9428571474184,41.164705881683"
               Start="0,0"
-              End="-17.214285715806,33.264705881683">
+              End="-18.9428571474184,33.664705881683">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16.3823529408415" />
+                    End="0,16.5823529408415" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16.3823529408415"
-                    Point2="0,20.3823529408415"
-                    Point3="-4,20.3823529408415" />
+                    Point1="0,16.5823529408415"
+                    Point2="0,20.5823529408415"
+                    Point3="-4,20.5823529408415" />
                   <mssgle:LineSegment
-                    End="-13.214285715806,20.3823529408415" />
+                    End="-14.9428571474184,20.5823529408415" />
                   <mssgle:CubicBezierSegment
-                    Point1="-13.214285715806,20.3823529408415"
-                    Point2="-17.214285715806,20.3823529408415"
-                    Point3="-17.214285715806,24.3823529408415" />
+                    Point1="-14.9428571474184,20.5823529408415"
+                    Point2="-18.9428571474184,20.5823529408415"
+                    Point3="-18.9428571474184,24.5823529408415" />
                   <mssgle:LineSegment
-                    End="-17.214285715806,33.264705881683" />
+                    End="-18.9428571474184,33.664705881683" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1137,35 +1133,31 @@ where [refTable].[ParadaID] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="114.666666666667,42"
+          Size="114.4,41.6"
           Id="Package\Load Servicios\Lookup"
-          TopLeft="378.999999978713,227.235294129712" />
+          TopLeft="381.142857126132,229.52941177476" />
         <NodeLayout
-          Size="138.666666666667,42"
-          Id="Package\Load Servicios\Load staging"
-          TopLeft="281.857142863225,336.470588236635" />
-        <NodeLayout
-          Size="146.666666666667,42"
+          Size="146.4,41.6"
           Id="Package\Load Servicios\Load Paradas"
-          TopLeft="537.089285520228,339.712074325273" />
+          TopLeft="538.51785695184,340.476780206956" />
         <NodeLayout
-          Size="141.333333333334,42"
+          Size="141.6,41.6"
           Id="Package\Load Servicios\Get Paradas"
           TopLeft="364.000000010643,123.058823526731" />
         <EdgeLayout
           Id="Package\Load Servicios.Paths[OLE DB Source Output]"
-          TopLeft="435.499999994678,165.058823526731">
+          TopLeft="436.571428568387,164.658823526731">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,62.176470602981"
+              EndConnector="0,64.8705882480289"
               Start="0,0"
-              End="0,54.676470602981">
+              End="0,57.3705882480289">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,54.676470602981" />
+                    End="0,57.3705882480289" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1176,73 +1168,77 @@ where [refTable].[ParadaID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package\Load Servicios.Paths[Lookup No Match Output]"
-          TopLeft="454.111111089824,269.235294129712">
+          TopLeft="456.076190459465,271.12941177476">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="156.311507763737,70.4767801955611"
+              EndConnector="155.641666492375,69.3473684321957"
               Start="0,0"
-              End="156.311507763737,62.9767801955611">
+              End="155.641666492375,61.8473684321957">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,24.7726304468116" />
+                    End="0,24.3128566288689" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,24.7726304468116"
-                    Point2="0,28.7726304468116"
-                    Point3="4,28.7726304468116" />
+                    Point1="0,24.3128566288689"
+                    Point2="0,28.3128566288689"
+                    Point3="4,28.3128566288689" />
                   <mssgle:LineSegment
-                    End="152.311507763737,28.7726304468116" />
+                    End="151.641666492375,28.3128566288689" />
                   <mssgle:CubicBezierSegment
-                    Point1="152.311507763737,28.7726304468116"
-                    Point2="156.311507763737,28.7726304468116"
-                    Point3="156.311507763737,32.7726304468116" />
+                    Point1="151.641666492375,28.3128566288689"
+                    Point2="155.641666492375,28.3128566288689"
+                    Point3="155.641666492375,32.3128566288689" />
                   <mssgle:LineSegment
-                    End="156.311507763737,62.9767801955611" />
+                    End="155.641666492375,61.8473684321957" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="22.3493671631187,33.7726304468116,111.6127734375,11.609375"
+              BoundingBox="22.0144465274377,33.3128566288689,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Load Servicios\Load Staging"
+          TopLeft="225.714286194772,338.764705585413" />
         <EdgeLayout
           Id="Package\Load Servicios.Paths[Lookup Match Output]"
-          TopLeft="418.66666664538,269.235294129712">
+          TopLeft="420.609523792798,271.12941177476">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-67.3095237821547,67.235294106923"
+              EndConnector="-124.895237598026,67.6352938106526"
               Start="0,0"
-              End="-67.3095237821547,59.735294106923">
+              End="-124.895237598026,60.1352938106526">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,23.4476843867027" />
+                    End="0,23.613857886832" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,23.4476843867027"
-                    Point2="0,27.4476843867027"
-                    Point3="-4,27.4476843867027" />
+                    Point1="0,23.613857886832"
+                    Point2="0,27.613857886832"
+                    Point3="-4,27.613857886832" />
                   <mssgle:LineSegment
-                    End="-63.3095237821547,27.4476843867027" />
+                    End="-120.895237598026,27.613857886832" />
                   <mssgle:CubicBezierSegment
-                    Point1="-63.3095237821547,27.4476843867027"
-                    Point2="-67.3095237821547,27.4476843867027"
-                    Point3="-67.3095237821547,31.4476843867027" />
+                    Point1="-120.895237598026,27.613857886832"
+                    Point2="-124.895237598026,27.613857886832"
+                    Point3="-124.895237598026,31.613857886832" />
                   <mssgle:LineSegment
-                    End="-67.3095237821547,59.735294106923" />
+                    End="-124.895237598026,60.1352938106526" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-81.8461486098273,32.4476843867027,96.3827734375,11.609375"
+              BoundingBox="-110.639005517763,32.613857886832,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1255,7 +1251,7 @@ where [refTable].[ParadaID] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:string">false</Value>
+          type="q2:boolean">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -1265,23 +1261,10 @@ where [refTable].[ParadaID] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:string">0</Value>
+          type="q4:int">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load Servicios\Load staging">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -1303,6 +1286,19 @@ where [refTable].[ParadaID] = ?</property>
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load Servicios\Load Staging">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
