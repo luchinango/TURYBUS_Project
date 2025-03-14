@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="AutobusesMantenimiento"
   DTS:PackageType="5"
-  DTS:VersionBuild="23"
-  DTS:VersionGUID="{C426AE83-ABFB-407E-97BD-41F5EC959772}">
+  DTS:VersionBuild="37"
+  DTS:VersionGUID="{6AAC5484-0E7C-4102-ACF9-1BAE06724241}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -138,11 +138,11 @@
           version="1">
           <components>
             <component
-              refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento"
+              refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento"
               componentClassID="Microsoft.OLEDBSource"
               contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
               description="OLE DB Source"
-              name="Get AutobusesMantenimiento"
+              name="Get AutobusMantenimiento"
               usesDispositions="true"
               version="7">
               <properties>
@@ -162,9 +162,7 @@
                   dataType="System.String"
                   description="The SQL command to be executed."
                   name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetAutobusesMantenimientoChangesByRowVersion] 
-   @startRow=?
-  ,@endRow=?</property>
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor">EXECUTE [dbo].[GetAutobusesMantenimientoChangesByRowVersion] @startRow=?, @endRow=?</property>
                 <property
                   dataType="System.String"
                   description="The variable that contains the SQL command to be executed."
@@ -189,7 +187,7 @@
               </properties>
               <connections>
                 <connection
-                  refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Connections[OleDbConnection]"
+                  refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Connections[OleDbConnection]"
                   connectionManagerID="Package.ConnectionManagers[Source.TURYBUS_DB]"
                   connectionManagerRefId="Package.ConnectionManagers[Source.TURYBUS_DB]"
                   description="The OLE DB runtime connection used to access the database."
@@ -197,179 +195,179 @@
               </connections>
               <outputs>
                 <output
-                  refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output]"
+                  refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output]"
                   name="OLE DB Source Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[AutobusID]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[AutobusID]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]"
                       name="AutobusID"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Matricula]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Matricula]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Matricula]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Matricula]"
                       length="20"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Matricula]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Matricula]"
                       name="Matricula"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Modelo]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Modelo]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Modelo]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Modelo]"
                       length="50"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Modelo]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Modelo]"
                       name="Modelo"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Fabricante]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Fabricante]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Fabricante]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Fabricante]"
                       length="50"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Fabricante]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Fabricante]"
                       name="Fabricante"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Plazas]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Plazas]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Plazas]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Plazas]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Plazas]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Plazas]"
                       name="Plazas"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Caracteristicas]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Caracteristicas]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Caracteristicas]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Caracteristicas]"
                       length="500"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Caracteristicas]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Caracteristicas]"
                       name="Caracteristicas"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[FechaRevision]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[FechaRevision]"
                       dataType="dbDate"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[FechaRevision]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[FechaRevision]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[FechaRevision]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[FechaRevision]"
                       name="FechaRevision"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Diagnostico]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Diagnostico]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Diagnostico]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Diagnostico]"
                       length="500"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Diagnostico]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Diagnostico]"
                       name="Diagnostico"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[CodigoReparacion]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[CodigoReparacion]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[CodigoReparacion]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[CodigoReparacion]"
                       length="20"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[CodigoReparacion]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[CodigoReparacion]"
                       name="CodigoReparacion"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[TiempoEmpleado]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[TiempoEmpleado]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[TiempoEmpleado]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[TiempoEmpleado]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[TiempoEmpleado]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[TiempoEmpleado]"
                       name="TiempoEmpleado"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Comentario]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Comentario]"
                       codePage="1252"
                       dataType="str"
                       errorOrTruncationOperation="Conversion"
                       errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Comentario]"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Comentario]"
                       length="500"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Comentario]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Comentario]"
                       name="Comentario"
                       truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[AutobusID]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[AutobusID]"
                       dataType="i4"
                       name="AutobusID" />
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Matricula]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Matricula]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="Matricula" />
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Modelo]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Modelo]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Modelo" />
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Fabricante]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Fabricante]"
                       codePage="1252"
                       dataType="str"
                       length="50"
                       name="Fabricante" />
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Plazas]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Plazas]"
                       dataType="i4"
                       name="Plazas" />
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Caracteristicas]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Caracteristicas]"
                       codePage="1252"
                       dataType="str"
                       length="500"
                       name="Caracteristicas" />
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[FechaRevision]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[FechaRevision]"
                       dataType="dbDate"
                       name="FechaRevision" />
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Diagnostico]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Diagnostico]"
                       codePage="1252"
                       dataType="str"
                       length="500"
                       name="Diagnostico" />
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[CodigoReparacion]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[CodigoReparacion]"
                       codePage="1252"
                       dataType="str"
                       length="20"
                       name="CodigoReparacion" />
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[TiempoEmpleado]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[TiempoEmpleado]"
                       dataType="i4"
                       name="TiempoEmpleado" />
                     <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Comentario]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].ExternalColumns[Comentario]"
                       codePage="1252"
                       dataType="str"
                       length="500"
@@ -377,89 +375,585 @@
                   </externalMetadataColumns>
                 </output>
                 <output
-                  refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output]"
+                  refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output]"
                   isErrorOut="true"
                   name="OLE DB Source Error Output">
                   <outputColumns>
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[AutobusID]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[AutobusID]"
                       dataType="i4"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[AutobusID]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[AutobusID]"
                       name="AutobusID" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Matricula]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Matricula]"
                       codePage="1252"
                       dataType="str"
                       length="20"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Matricula]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Matricula]"
                       name="Matricula" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Modelo]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Modelo]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Modelo]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Modelo]"
                       name="Modelo" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Fabricante]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Fabricante]"
                       codePage="1252"
                       dataType="str"
                       length="50"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Fabricante]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Fabricante]"
                       name="Fabricante" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Plazas]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Plazas]"
                       dataType="i4"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Plazas]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Plazas]"
                       name="Plazas" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Caracteristicas]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Caracteristicas]"
                       codePage="1252"
                       dataType="str"
                       length="500"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Caracteristicas]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Caracteristicas]"
                       name="Caracteristicas" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[FechaRevision]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[FechaRevision]"
                       dataType="dbDate"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[FechaRevision]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[FechaRevision]"
                       name="FechaRevision" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Diagnostico]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Diagnostico]"
                       codePage="1252"
                       dataType="str"
                       length="500"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Diagnostico]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Diagnostico]"
                       name="Diagnostico" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[CodigoReparacion]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[CodigoReparacion]"
                       codePage="1252"
                       dataType="str"
                       length="20"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[CodigoReparacion]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[CodigoReparacion]"
                       name="CodigoReparacion" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[TiempoEmpleado]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[TiempoEmpleado]"
                       dataType="i4"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[TiempoEmpleado]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[TiempoEmpleado]"
                       name="TiempoEmpleado" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Comentario]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Comentario]"
                       codePage="1252"
                       dataType="str"
                       length="500"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[Comentario]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[Comentario]"
                       name="Comentario" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       dataType="i4"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
                       name="ErrorCode"
                       specialFlags="1" />
                     <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      refId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
                       dataType="i4"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load AutobusMantenimiento"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[dbo].[Dim_AutobusesMantenimiento]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Target.TurybusDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[Target.TurybusDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[AutobusID]"
+                      cachedDataType="i4"
+                      cachedName="AutobusID"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[AutobusID]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Matricula"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Matricula]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Matricula]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[Modelo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Modelo"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Modelo]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Modelo]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[Fabricante]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Fabricante"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Fabricante]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Fabricante]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[Plazas]"
+                      cachedDataType="i4"
+                      cachedName="Plazas"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Plazas]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Plazas]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[Caracteristicas]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Caracteristicas"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Caracteristicas]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Caracteristicas]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[FechaRevision]"
+                      cachedDataType="dbDate"
+                      cachedName="FechaRevision"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[FechaRevision]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[FechaRevision]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[Diagnostico]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Diagnostico"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Diagnostico]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Diagnostico]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[CodigoReparacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CodigoReparacion"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[CodigoReparacion]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[CodigoReparacion]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[TiempoEmpleado]"
+                      cachedDataType="i4"
+                      cachedName="TiempoEmpleado"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[TiempoEmpleado]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[TiempoEmpleado]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].Columns[Comentario]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Comentario"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Comentario]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Comentario]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[AutobusSK]"
+                      dataType="i4"
+                      name="AutobusSK" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[AutobusID]"
+                      dataType="i4"
+                      name="AutobusID" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Modelo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Modelo" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Fabricante]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Fabricante" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Plazas]"
+                      dataType="i4"
+                      name="Plazas" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Caracteristicas]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Caracteristicas" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[FechaRevision]"
+                      dataType="dbDate"
+                      name="FechaRevision" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Diagnostico]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Diagnostico" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[CodigoReparacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CodigoReparacion" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[TiempoEmpleado]"
+                      dataType="i4"
+                      name="TiempoEmpleado" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input].ExternalColumns[Comentario]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Comentario" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Load AutobusesMantenimiento\Load Staging"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+              description="OLE DB Destination"
+              name="Load Staging"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset">[Staging].[AutobusesMantenimiento]</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">3</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Load AutobusesMantenimiento\Load Staging.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Target.TurybusDW]"
+                  connectionManagerRefId="Package.ConnectionManagers[Target.TurybusDW]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input]"
+                  errorOrTruncationOperation="Insert"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="OLE DB Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[Matricula]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Matricula"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Matricula]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Matricula]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[Modelo]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Modelo"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Modelo]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Modelo]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[Fabricante]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Fabricante"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Fabricante]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Fabricante]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[Plazas]"
+                      cachedDataType="i4"
+                      cachedName="Plazas"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Plazas]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Plazas]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[Caracteristicas]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Caracteristicas"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Caracteristicas]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Caracteristicas]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[FechaRevision]"
+                      cachedDataType="dbDate"
+                      cachedName="FechaRevision"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[FechaRevision]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[FechaRevision]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[Diagnostico]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Diagnostico"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Diagnostico]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Diagnostico]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[CodigoReparacion]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="CodigoReparacion"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[CodigoReparacion]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[CodigoReparacion]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[TiempoEmpleado]"
+                      cachedDataType="i4"
+                      cachedName="TiempoEmpleado"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[TiempoEmpleado]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[TiempoEmpleado]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[Comentario]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="500"
+                      cachedName="Comentario"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Comentario]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[Comentario]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[AutobusSK]"
+                      cachedDataType="i4"
+                      cachedName="AutobusSK"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[AutobusSK]"
+                      lineageId="Package\Load AutobusesMantenimiento\Lookup.Outputs[Lookup Match Output].Columns[AutobusSK]" />
+                    <inputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].Columns[AutobusID]"
+                      cachedDataType="i4"
+                      cachedName="AutobusID"
+                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[AutobusID]"
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[AutobusSK]"
+                      dataType="i4"
+                      name="AutobusSK" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[AutobusID]"
+                      dataType="i4"
+                      name="AutobusID" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Matricula]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Matricula" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Modelo]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Modelo" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Fabricante]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Fabricante" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Plazas]"
+                      dataType="i4"
+                      name="Plazas" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Caracteristicas]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Caracteristicas" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[FechaRevision]"
+                      dataType="dbDate"
+                      name="FechaRevision" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Diagnostico]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Diagnostico" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[CodigoReparacion]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="CodigoReparacion" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[TiempoEmpleado]"
+                      dataType="i4"
+                      name="TiempoEmpleado" />
+                    <externalMetadataColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[Comentario]"
+                      codePage="1252"
+                      dataType="str"
+                      length="500"
+                      name="Comentario" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Load AutobusesMantenimiento\Load Staging.Outputs[OLE DB Destination Error Output]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="OLE DB Destination Error Output"
+                  synchronousInputId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Load AutobusesMantenimiento\Load Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Load AutobusesMantenimiento\Load Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Load AutobusesMantenimiento\Load Staging.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
                       name="ErrorColumn"
                       specialFlags="2" />
                   </outputColumns>
@@ -524,7 +1018,7 @@ where [refTable].[AutobusID] = ?</property>
                   containsID="true"
                   dataType="System.String"
                   description="Specifies the list of lineage identifiers that map to the parameters that the SQL statement in the SQLCommand property uses. Entries in the list are separated by semicolons."
-                  name="ParameterMap">#{Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]};</property>
+                  name="ParameterMap">#{Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]};</property>
                 <property
                   dataType="System.Int32"
                   description="Specifies the column code page to use when code page information is unavailable from the data source."
@@ -551,7 +1045,7 @@ where [refTable].[AutobusID] = ?</property>
                       refId="Package\Load AutobusesMantenimiento\Lookup.Inputs[Lookup Input].Columns[AutobusID]"
                       cachedDataType="i4"
                       cachedName="AutobusID"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]">
+                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]">
                       <properties>
                         <property
                           dataType="System.String"
@@ -624,513 +1118,23 @@ where [refTable].[AutobusID] = ?</property>
                 </output>
               </outputs>
             </component>
-            <component
-              refId="Package\Load AutobusesMantenimiento\OLE DB Destination"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[Staging].[AutobusesMantenimiento]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Target.TurybusDW]"
-                  connectionManagerRefId="Package.ConnectionManagers[Target.TurybusDW]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Matricula]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="Matricula"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Matricula]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Matricula]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Modelo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Modelo"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Modelo]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Modelo]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Fabricante]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Fabricante"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fabricante]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Fabricante]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Plazas]"
-                      cachedDataType="i4"
-                      cachedName="Plazas"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plazas]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Plazas]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Caracteristicas]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="500"
-                      cachedName="Caracteristicas"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Caracteristicas]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Caracteristicas]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[FechaRevision]"
-                      cachedDataType="dbDate"
-                      cachedName="FechaRevision"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaRevision]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[FechaRevision]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Diagnostico]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="500"
-                      cachedName="Diagnostico"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Diagnostico]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Diagnostico]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[CodigoReparacion]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="CodigoReparacion"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoReparacion]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[CodigoReparacion]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[TiempoEmpleado]"
-                      cachedDataType="i4"
-                      cachedName="TiempoEmpleado"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TiempoEmpleado]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[TiempoEmpleado]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[Comentario]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="500"
-                      cachedName="Comentario"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Comentario]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Comentario]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[AutobusSK]"
-                      cachedDataType="i4"
-                      cachedName="AutobusSK"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AutobusSK]"
-                      lineageId="Package\Load AutobusesMantenimiento\Lookup.Outputs[Lookup Match Output].Columns[AutobusSK]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AutobusSK]"
-                      dataType="i4"
-                      name="AutobusSK" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[AutobusID]"
-                      dataType="i4"
-                      name="AutobusID" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Matricula]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Matricula" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Modelo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Modelo" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Fabricante]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Fabricante" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Plazas]"
-                      dataType="i4"
-                      name="Plazas" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Caracteristicas]"
-                      codePage="1252"
-                      dataType="str"
-                      length="500"
-                      name="Caracteristicas" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[FechaRevision]"
-                      dataType="dbDate"
-                      name="FechaRevision" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Diagnostico]"
-                      codePage="1252"
-                      dataType="str"
-                      length="500"
-                      name="Diagnostico" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[CodigoReparacion]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="CodigoReparacion" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[TiempoEmpleado]"
-                      dataType="i4"
-                      name="TiempoEmpleado" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[Comentario]"
-                      codePage="1252"
-                      dataType="str"
-                      length="500"
-                      name="Comentario" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load AutobusesMantenimiento\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load AutobusesMantenimiento\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
-            <component
-              refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1"
-              componentClassID="Microsoft.OLEDBDestination"
-              contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
-              description="OLE DB Destination"
-              name="OLE DB Destination 1"
-              usesDispositions="true"
-              version="4">
-              <properties>
-                <property
-                  dataType="System.Int32"
-                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
-                  name="CommandTimeout">0</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the name of the database object used to open a rowset."
-                  name="OpenRowset">[dbo].[Dim_AutobusesMantenimiento]</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies the variable that contains the name of the database object used to open a rowset."
-                  name="OpenRowsetVariable"></property>
-                <property
-                  dataType="System.String"
-                  description="The SQL command to be executed."
-                  name="SqlCommand"
-                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the column code page to use when code page information is unavailable from the data source."
-                  name="DefaultCodePage">1252</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Forces the use of the DefaultCodePage property value when describing character data."
-                  name="AlwaysUseDefaultCodePage">false</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies the mode used to access the database."
-                  name="AccessMode"
-                  typeConverter="AccessMode">3</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepIdentity">false</property>
-                <property
-                  dataType="System.Boolean"
-                  description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
-                  name="FastLoadKeepNulls">false</property>
-                <property
-                  dataType="System.String"
-                  description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
-                  name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
-                <property
-                  dataType="System.Int32"
-                  description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
-                  name="FastLoadMaxInsertCommitSize">2147483647</property>
-              </properties>
-              <connections>
-                <connection
-                  refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Target.TurybusDW]"
-                  connectionManagerRefId="Package.ConnectionManagers[Target.TurybusDW]"
-                  description="The OLE DB runtime connection used to access the database."
-                  name="OleDbConnection" />
-              </connections>
-              <inputs>
-                <input
-                  refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
-                  errorOrTruncationOperation="Insert"
-                  errorRowDisposition="FailComponent"
-                  hasSideEffects="true"
-                  name="OLE DB Destination Input">
-                  <inputColumns>
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[AutobusID]"
-                      cachedDataType="i4"
-                      cachedName="AutobusID"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[AutobusID]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[AutobusID]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Matricula]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="Matricula"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Matricula]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Matricula]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Modelo]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Modelo"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Modelo]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Modelo]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Fabricante]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="50"
-                      cachedName="Fabricante"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Fabricante]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Fabricante]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Plazas]"
-                      cachedDataType="i4"
-                      cachedName="Plazas"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Plazas]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Plazas]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Caracteristicas]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="500"
-                      cachedName="Caracteristicas"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Caracteristicas]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Caracteristicas]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[FechaRevision]"
-                      cachedDataType="dbDate"
-                      cachedName="FechaRevision"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[FechaRevision]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[FechaRevision]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Diagnostico]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="500"
-                      cachedName="Diagnostico"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Diagnostico]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Diagnostico]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[CodigoReparacion]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="20"
-                      cachedName="CodigoReparacion"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CodigoReparacion]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[CodigoReparacion]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[TiempoEmpleado]"
-                      cachedDataType="i4"
-                      cachedName="TiempoEmpleado"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[TiempoEmpleado]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[TiempoEmpleado]" />
-                    <inputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].Columns[Comentario]"
-                      cachedCodepage="1252"
-                      cachedDataType="str"
-                      cachedLength="500"
-                      cachedName="Comentario"
-                      externalMetadataColumnId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Comentario]"
-                      lineageId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output].Columns[Comentario]" />
-                  </inputColumns>
-                  <externalMetadataColumns
-                    isUsed="True">
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[AutobusSK]"
-                      dataType="i4"
-                      name="AutobusSK" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[AutobusID]"
-                      dataType="i4"
-                      name="AutobusID" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Matricula]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Matricula" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Modelo]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Modelo" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Fabricante]"
-                      codePage="1252"
-                      dataType="str"
-                      length="50"
-                      name="Fabricante" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Plazas]"
-                      dataType="i4"
-                      name="Plazas" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Caracteristicas]"
-                      codePage="1252"
-                      dataType="str"
-                      length="500"
-                      name="Caracteristicas" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[FechaRevision]"
-                      dataType="dbDate"
-                      name="FechaRevision" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Diagnostico]"
-                      codePage="1252"
-                      dataType="str"
-                      length="500"
-                      name="Diagnostico" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[CodigoReparacion]"
-                      codePage="1252"
-                      dataType="str"
-                      length="20"
-                      name="CodigoReparacion" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[TiempoEmpleado]"
-                      dataType="i4"
-                      name="TiempoEmpleado" />
-                    <externalMetadataColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input].ExternalColumns[Comentario]"
-                      codePage="1252"
-                      dataType="str"
-                      length="500"
-                      name="Comentario" />
-                  </externalMetadataColumns>
-                </input>
-              </inputs>
-              <outputs>
-                <output
-                  refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Outputs[OLE DB Destination Error Output]"
-                  exclusionGroup="1"
-                  isErrorOut="true"
-                  name="OLE DB Destination Error Output"
-                  synchronousInputId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input]">
-                  <outputColumns>
-                    <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      dataType="i4"
-                      lineageId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
-                      name="ErrorCode"
-                      specialFlags="1" />
-                    <outputColumn
-                      refId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      dataType="i4"
-                      lineageId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
-                      name="ErrorColumn"
-                      specialFlags="2" />
-                  </outputColumns>
-                  <externalMetadataColumns />
-                </output>
-              </outputs>
-            </component>
           </components>
           <paths>
             <path
               refId="Package\Load AutobusesMantenimiento.Paths[Lookup Match Output]"
-              endId="Package\Load AutobusesMantenimiento\OLE DB Destination.Inputs[OLE DB Destination Input]"
+              endId="Package\Load AutobusesMantenimiento\Load Staging.Inputs[OLE DB Destination Input]"
               name="Lookup Match Output"
               startId="Package\Load AutobusesMantenimiento\Lookup.Outputs[Lookup Match Output]" />
             <path
               refId="Package\Load AutobusesMantenimiento.Paths[Lookup No Match Output]"
-              endId="Package\Load AutobusesMantenimiento\OLE DB Destination 1.Inputs[OLE DB Destination Input]"
+              endId="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento.Inputs[OLE DB Destination Input]"
               name="Lookup No Match Output"
               startId="Package\Load AutobusesMantenimiento\Lookup.Outputs[Lookup No Match Output]" />
             <path
               refId="Package\Load AutobusesMantenimiento.Paths[OLE DB Source Output]"
               endId="Package\Load AutobusesMantenimiento\Lookup.Inputs[Lookup Input]"
               name="OLE DB Source Output"
-              startId="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento.Outputs[OLE DB Source Output]" />
+              startId="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento.Outputs[OLE DB Source Output]" />
           </paths>
         </pipeline>
       </DTS:ObjectData>
@@ -1232,27 +1236,27 @@ where [refTable].[AutobusID] = ?</property>
       <GraphLayout
         Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
         <NodeLayout
-          Size="159,42"
+          Size="159.2,41.6"
           Id="Package\Clean-up Staging"
           TopLeft="463,180" />
         <NodeLayout
-          Size="201,42"
+          Size="200.8,41.6"
           Id="Package\Get Database RowVersion"
           TopLeft="443,26" />
         <NodeLayout
-          Size="173,42"
+          Size="172.8,41.6"
           Id="Package\Get LastRowVersion"
           TopLeft="462,102" />
         <NodeLayout
-          Size="223,42"
+          Size="222.4,41.6"
           Id="Package\Load AutobusesMantenimiento"
-          TopLeft="466,253" />
+          TopLeft="477.4285714529,252.235294118317" />
         <NodeLayout
-          Size="140,42"
+          Size="140,41.6"
           Id="Package\Sync Staging"
-          TopLeft="468,334" />
+          TopLeft="469.428571431612,334" />
         <NodeLayout
-          Size="163,42"
+          Size="163.2,41.6"
           Id="Package\Update config"
           TopLeft="448,416" />
         <EdgeLayout
@@ -1301,30 +1305,30 @@ where [refTable].[AutobusID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 2]"
-          TopLeft="542.5,222">
+          TopLeft="542.6,221.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="35,31"
+              EndConnector="46.0285714528997,30.6352941183174"
               Start="0,0"
-              End="35,23.5">
+              End="46.0285714528997,23.1352941183174">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,11.5" />
+                    End="0,11.3176470591587" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,11.5"
-                    Point2="0,15.5"
-                    Point3="4,15.5" />
+                    Point1="0,11.3176470591587"
+                    Point2="0,15.3176470591587"
+                    Point3="4,15.3176470591587" />
                   <mssgle:LineSegment
-                    End="31,15.5" />
+                    End="42.0285714528997,15.3176470591587" />
                   <mssgle:CubicBezierSegment
-                    Point1="31,15.5"
-                    Point2="35,15.5"
-                    Point3="35,19.5" />
+                    Point1="42.0285714528997,15.3176470591587"
+                    Point2="46.0285714528997,15.3176470591587"
+                    Point3="46.0285714528997,19.3176470591587" />
                   <mssgle:LineSegment
-                    End="35,23.5" />
+                    End="46.0285714528997,23.1352941183174" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1335,30 +1339,30 @@ where [refTable].[AutobusID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 3]"
-          TopLeft="577.5,295">
+          TopLeft="588.6285714529,293.835294118317">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-39.5,39"
+              EndConnector="-49.2000000212872,40.1647058816826"
               Start="0,0"
-              End="-39.5,31.5">
+              End="-49.2000000212872,32.6647058816826">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,15.5" />
+                    End="0,16.0823529408413" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,15.5"
-                    Point2="0,19.5"
-                    Point3="-4,19.5" />
+                    Point1="0,16.0823529408413"
+                    Point2="0,20.0823529408413"
+                    Point3="-4,20.0823529408413" />
                   <mssgle:LineSegment
-                    End="-35.5,19.5" />
+                    End="-45.2000000212872,20.0823529408413" />
                   <mssgle:CubicBezierSegment
-                    Point1="-35.5,19.5"
-                    Point2="-39.5,19.5"
-                    Point3="-39.5,23.5" />
+                    Point1="-45.2000000212872,20.0823529408413"
+                    Point2="-49.2000000212872,20.0823529408413"
+                    Point3="-49.2000000212872,24.0823529408413" />
                   <mssgle:LineSegment
-                    End="-39.5,31.5" />
+                    End="-49.2000000212872,32.6647058816826" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1369,30 +1373,30 @@ where [refTable].[AutobusID] = ?</property>
         </EdgeLayout>
         <EdgeLayout
           Id="Package.PrecedenceConstraints[Constraint 4]"
-          TopLeft="538,376">
+          TopLeft="539.428571431612,375.6">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-8.5,40"
+              EndConnector="-9.82857143161243,40.4"
               Start="0,0"
-              End="-8.5,32.5">
+              End="-9.82857143161243,32.9">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,16" />
+                    End="0,16.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,16"
-                    Point2="0,20"
-                    Point3="-4,20" />
+                    Point1="0,16.2"
+                    Point2="0,20.2"
+                    Point3="-4,20.2" />
                   <mssgle:LineSegment
-                    End="-4.5,20" />
+                    End="-5.82857143161243,20.2" />
                   <mssgle:CubicBezierSegment
-                    Point1="-4.5,20"
-                    Point2="-8.5,20"
-                    Point3="-8.5,24" />
+                    Point1="-5.82857143161243,20.2"
+                    Point2="-9.82857143161243,20.2"
+                    Point3="-9.82857143161243,24.2" />
                   <mssgle:LineSegment
-                    End="-8.5,32.5" />
+                    End="-9.82857143161243,32.9" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1410,27 +1414,27 @@ where [refTable].[AutobusID] = ?</property>
       <GraphLayout
         Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="224,42"
-          Id="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento"
-          TopLeft="462,40" />
+          Size="205.6,41.6"
+          Id="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento"
+          TopLeft="433.571429494388,51.2352940727373" />
         <NodeLayout
-          Size="113,42"
+          Size="112.8,41.6"
           Id="Package\Load AutobusesMantenimiento\Lookup"
-          TopLeft="522,123" />
+          TopLeft="472.142858147925,132.294117531098" />
         <EdgeLayout
           Id="Package\Load AutobusesMantenimiento.Paths[OLE DB Source Output]"
-          TopLeft="576.25,82">
+          TopLeft="532.457143821157,92.8352940727374">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,41"
+              EndConnector="0,39.4588234583606"
               Start="0,0"
-              End="0,33.5">
+              End="0,31.9588234583606">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33.5" />
+                    End="0,31.9588234583606" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
@@ -1440,82 +1444,82 @@ where [refTable].[AutobusID] = ?</property>
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="171,42"
-          Id="Package\Load AutobusesMantenimiento\OLE DB Destination"
-          TopLeft="334,239" />
+          Size="140,41.6"
+          Id="Package\Load AutobusesMantenimiento\Load Staging"
+          TopLeft="355.714286471508,266.117646825561" />
         <EdgeLayout
           Id="Package\Load AutobusesMantenimiento.Paths[Lookup Match Output]"
-          TopLeft="578.5,165">
+          TopLeft="511.076191481259,173.894117531098">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-159,74"
+              EndConnector="-85.3619050097506,92.2235292944632"
               Start="0,0"
-              End="-159,66.5">
+              End="-85.3619050097506,84.7235292944632">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,33" />
+                    End="0,33.6633154601164" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,33"
-                    Point2="0,37"
-                    Point3="-4,37" />
+                    Point1="0,33.6633154601164"
+                    Point2="0,37.6633154601164"
+                    Point3="-4,37.6633154601164" />
                   <mssgle:LineSegment
-                    End="-155,37" />
+                    End="-81.3619050097506,37.6633154601164" />
                   <mssgle:CubicBezierSegment
-                    Point1="-155,37"
-                    Point2="-159,37"
-                    Point3="-159,41" />
+                    Point1="-81.3619050097506,37.6633154601164"
+                    Point2="-85.3619050097506,37.6633154601164"
+                    Point3="-85.3619050097506,41.6633154601164" />
                   <mssgle:LineSegment
-                    End="-159,66.5" />
+                    End="-85.3619050097506,84.7235292944632" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-127.69138671875,42,96.3827734375,11.609375"
+              BoundingBox="-90.8723392236253,42.6633154601164,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <NodeLayout
-          Size="180,42"
-          Id="Package\Load AutobusesMantenimiento\OLE DB Destination 1"
-          TopLeft="636,252" />
+          Size="212,41.6"
+          Id="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento"
+          TopLeft="573.571429792411,274.52941152407" />
         <EdgeLayout
           Id="Package\Load AutobusesMantenimiento.Paths[Lookup No Match Output]"
-          TopLeft="596,165">
+          TopLeft="546.009524814592,173.894117531098">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="130,87"
+              EndConnector="133.561904977819,100.635293992972"
               Start="0,0"
-              End="130,79.5">
+              End="133.561904977819,93.1352939929723">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,31.5287958115183" />
+                    End="0,37.0986095747523" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,31.5287958115183"
-                    Point2="0,35.5287958115183"
-                    Point3="4,35.5287958115183" />
+                    Point1="0,37.0986095747523"
+                    Point2="0,41.0986095747523"
+                    Point3="4,41.0986095747523" />
                   <mssgle:LineSegment
-                    End="126,35.5287958115183" />
+                    End="129.561904977819,41.0986095747523" />
                   <mssgle:CubicBezierSegment
-                    Point1="126,35.5287958115183"
-                    Point2="130,35.5287958115183"
-                    Point3="130,39.5287958115183" />
+                    Point1="129.561904977819,41.0986095747523"
+                    Point2="133.561904977819,41.0986095747523"
+                    Point3="133.561904977819,45.0986095747523" />
                   <mssgle:LineSegment
-                    End="130,79.5" />
+                    End="133.561904977819,93.1352939929723" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="9.19361328125,40.5287958115183,111.6127734375,11.609375"
+              BoundingBox="10.9745657701596,46.0986095747523,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -1523,7 +1527,7 @@ where [refTable].[AutobusID] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load AutobusesMantenimiento\Get AutobusesMantenimiento">
+    design-time-name="Package\Load AutobusesMantenimiento\Get AutobusMantenimiento">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1554,7 +1558,7 @@ where [refTable].[AutobusID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load AutobusesMantenimiento\OLE DB Destination">
+    design-time-name="Package\Load AutobusesMantenimiento\Load Staging">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -1567,7 +1571,7 @@ where [refTable].[AutobusID] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load AutobusesMantenimiento\OLE DB Destination 1">
+    design-time-name="Package\Load AutobusesMantenimiento\Load AutobusMantenimiento">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
