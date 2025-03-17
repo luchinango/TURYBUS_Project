@@ -94,10 +94,12 @@
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeDim_Rutas.sql" />
     <Build Include="Schema\Tables\Staging\Staging.VentasServicios.sql" />
     <Build Include="Schema\Programmability\Stored Procedures\DW_MergeVentasServicios.sql" />
+    <Build Include="Schema\Tables\Dim_Calendar.sql" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Scripts\PackageConfig.data.sql" />
     <None Include="Scripts\CleanData.sql" />
+    <None Include="Scripts\CalendarAuto.sql" />
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment1.sql" />
