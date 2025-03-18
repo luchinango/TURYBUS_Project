@@ -5,25 +5,25 @@
 -- 1. Datos en Operaciones.Autobuses
 INSERT INTO Operaciones.Autobuses (matricula, modelo, fabricante, plazas, caracteristicas)
 VALUES
-('ABC123', 'Modelo A', 'Fabricante X', 50, 'Aire acondicionado, WiFi'),
-('DEF456', 'Modelo B', 'Fabricante Y', 45, 'Aire acondicionado'),
-('GHI789', 'Modelo C', 'Fabricante Z', 60, 'WiFi, TV'),
-('JKL012', 'Modelo D', 'Fabricante X', 55, 'Aire acondicionado, TV'),
-('MNO345', 'Modelo E', 'Fabricante Y', 40, 'WiFi'),
-('PQR678', 'Modelo F', 'Fabricante Z', 50, 'Aire acondicionado, WiFi'),
-('STU901', 'Modelo G', 'Fabricante X', 48, 'WiFi, Comodidades'),
-('VWX234', 'Modelo H', 'Fabricante Y', 52, 'Aire acondicionado'),
-('YZA567', 'Modelo I', 'Fabricante Z', 47, 'WiFi, Aire acondicionado'),
-('BCD890', 'Modelo J', 'Fabricante X', 60, 'WiFi, Aire acondicionado, TV');
+('ABC123', 'T3500', 'MAZDA', 50, 'Aire acondicionado, WiFi'),
+('DEF456', '9800', 'VOLVO', 45, 'Aire acondicionado'),
+('GHI789', 'COASTER', 'TOYOTA', 60, 'WiFi, TV'),
+('JKL012', 'E2200', 'MAZDA', 55, 'Aire acondicionado, TV'),
+('MNO345', '9700', 'VOLVO', 40, 'WiFi'),
+('PQR678', 'COASTER', 'TOYOTA', 50, 'Aire acondicionado, WiFi'),
+('STU901', 'T3500', 'MAZDA', 48, 'WiFi, Comodidades'),
+('VWX234', '9800', 'VOLVO', 52, 'Aire acondicionado'),
+('YZA567', 'COASTER', 'TOYOTA', 47, 'WiFi, Aire acondicionado'),
+('BCD890', 'E2200', 'MAZDA', 60, 'WiFi, Aire acondicionado, TV');
 
 -- 2. Datos en Operaciones.Conductores
 INSERT INTO Operaciones.Conductores (DNI, nombre, apellidos, telefono, direccion)
 VALUES
-('12345678A', 'Juan', 'Pérez', '600111222', 'Calle A'),
-('23456789B', 'Luis', 'García', '600222333', 'Calle B'),
-('34567890C', 'Carlos', 'Martínez', '600333444', 'Calle C'),
-('45678901D', 'Miguel', 'Sánchez', '600444555', 'Calle D'),
-('56789012E', 'Andrés', 'López', '600555666', 'Calle E');
+('12345678A', 'Juan', 'Pérez', '600111222', 'Calle Azurduy 158'),
+('23456789B', 'Luis', 'García', '600222333', 'Avenida Arce'),
+('34567890C', 'Carlos', 'Martínez', '600333444', 'Avenida Monseñor Rivero'),
+('45678901D', 'Miguel', 'Sánchez', '600444555', 'Calle España'),
+('56789012E', 'Andrés', 'López', '600555666', 'Calle Sagárnaga');
 
 -- 3. Datos en Operaciones.Empleados
 INSERT INTO Operaciones.Empleados (DNI, nombre, apellidos, telefono, email)
@@ -116,14 +116,13 @@ JOIN (
 -- Se definen paradas para algunas rutas; si una ruta no tiene paradas, se conservarán los horarios originales.
 INSERT INTO Turismo.Paradas (id_ruta, orden, nombre_lugar, hora_prevista, actividad, tiempo_parada)
 VALUES
-(1, 1, 'Parada A', '08:05', 'Descanso', '00:05'),
-(1, 2, 'Parada B', '08:15', 'Comida', '00:10'),
-(2, 1, 'Parada C', '09:10', 'Descanso', '00:05'),
-(2, 2, 'Parada D', '09:30', 'Comida', '00:10'),
-(3, 1, 'Parada E', '10:15', 'Descanso', '00:05'),
-(4, 1, 'Parada X', '12:10', 'Descanso', '00:05'),
-(5, 1, 'Parada Y', '14:10', 'Descanso', '00:05');
-
+(1, 1, 'Área de Descanso Apacheta', '08:05', 'Descanso', '00:05'),
+(1, 2, 'Restaurante Mirador del Lago', '08:15', 'Comida', '00:10'),
+(2, 1, 'Parque de descanso', '09:10', 'Descanso', '00:05'),
+(2, 2, 'Mercado de comida típica', '09:30', 'Comida', '00:10'),
+(3, 1, 'Mirador La Angostura', '10:15', 'Descanso', '00:05'),
+(4, 1, 'Estación de Descanso', '12:10', 'Descanso', '00:05'),
+(5, 1, 'Parque de Descanso El Cristo', '14:10', 'Descanso', '00:05');
 -- 8. Datos en Seguridad.Revisiones
 INSERT INTO Seguridad.Revisiones (matricula_autobus, fecha_revision, diagnostico)
 VALUES

@@ -5,7 +5,7 @@ BEGIN
 	UPDATE dc
 	SET
 	[Id_billete] = sc.Id_Billete,
-	[FechaServicio] = sc.FechaServicio,
+	[DateKey_billete] = sc.DateKey_billete,
 	[RutaSK] = sc.RutaSK,
 	[AutobusSK] = sc.AutobusSK,
 	[ConductorSK] = sc.ConductorSK,

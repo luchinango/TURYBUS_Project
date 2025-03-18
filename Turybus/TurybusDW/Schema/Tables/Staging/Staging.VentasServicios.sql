@@ -3,7 +3,7 @@
 	VentaServicioSK INT NOT NULL,                            -- Surrogate Key
     Id_Billete INT NOT NULL,
     ServicioSK INT NOT NULL,                        -- Surrogate Key de servicio
-    FechaServicio DATE NOT NULL,
+    DateKey_billete INT NOT NULL,
     RutaSK INT NOT NULL,                            -- Surrogate Key de ruta
     AutobusSK INT NOT NULL,                             -- Surrogate Key de autobús mantenimiento
     ConductorSK INT NOT NULL,                           -- Surrogate Key de conductor
