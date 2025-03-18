@@ -6,7 +6,7 @@
     "dataSources": [
       {
         "name": "SqlServer DESKTOP-7CBKQ8C TurybusDW",
-        "connectionString": "Provider=SQLOLEDB;Data Source=DESKTOP-7CBKQ8C;Initial Catalog=TurybusDW;User ID=sa;Persist Security Info=false",
+        "connectionString": "Provider=SQLOLEDB;Data Source=DESKTOP-7CBKQ8C;Initial Catalog=TurybusDW;Persist Security Info=false;User ID=sa",
         "impersonationMode": "impersonateServiceAccount",
         "annotations": [
           {
@@ -18,17 +18,19 @@
     ],
     "tables": [
       {
-        "name": "Dim_AutobusesMantenimiento",
+        "name": "AutobusesMantenimiento",
         "columns": [
           {
             "name": "AutobusSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "AutobusSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "AutobusID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "AutobusID",
             "sourceProviderType": "Integer"
           },
@@ -120,17 +122,151 @@
         ]
       },
       {
-        "name": "Dim_Conductores",
+        "name": "Date",
+        "columns": [
+          {
+            "name": "DateKey",
+            "dataType": "int64",
+            "sourceColumn": "DateKey",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DateValue",
+            "dataType": "string",
+            "sourceColumn": "DateValue",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DayNumber",
+            "dataType": "int64",
+            "sourceColumn": "DayNumber",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DayName",
+            "dataType": "string",
+            "sourceColumn": "DayName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "MonthNumber",
+            "dataType": "int64",
+            "sourceColumn": "MonthNumber",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "MonthName",
+            "dataType": "string",
+            "sourceColumn": "MonthName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "YearNumber",
+            "dataType": "int64",
+            "sourceColumn": "YearNumber",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FiscalYear",
+            "dataType": "string",
+            "sourceColumn": "FiscalYear",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FiscalQuarter",
+            "dataType": "string",
+            "sourceColumn": "FiscalQuarter",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FiscalMonth",
+            "dataType": "string",
+            "sourceColumn": "FiscalMonth",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "FiscalWeek",
+            "dataType": "int64",
+            "sourceColumn": "FiscalWeek",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "FiscalWeekName",
+            "dataType": "string",
+            "sourceColumn": "FiscalWeekName",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "DayOfWeek",
+            "dataType": "int64",
+            "sourceColumn": "DayOfWeek",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "DayOfYear",
+            "dataType": "int64",
+            "sourceColumn": "DayOfYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "WeekOfYear",
+            "dataType": "int64",
+            "sourceColumn": "WeekOfYear",
+            "sourceProviderType": "Integer"
+          },
+          {
+            "name": "StartOfFiscalYear",
+            "dataType": "string",
+            "sourceColumn": "StartOfFiscalYear",
+            "sourceProviderType": "WChar"
+          },
+          {
+            "name": "EndOfFiscalYear",
+            "dataType": "string",
+            "sourceColumn": "EndOfFiscalYear",
+            "sourceProviderType": "WChar"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "Dim_Calendar",
+            "dataView": "full",
+            "source": {
+              "type": "query",
+              "query": " \t\t\t\tSELECT [dbo].[Dim_Calendar].*   FROM [dbo].[Dim_Calendar] ",
+              "dataSource": "SqlServer DESKTOP-7CBKQ8C TurybusDW"
+            }
+          }
+        ],
+        "annotations": [
+          {
+            "name": "_TM_ExtProp_QueryDefinition",
+            "value": " \t\t\t\tSELECT [dbo].[Dim_Calendar].*   FROM [dbo].[Dim_Calendar] "
+          },
+          {
+            "name": "_TM_ExtProp_DbTableName",
+            "value": "Dim_Calendar"
+          },
+          {
+            "name": "_TM_ExtProp_DbSchemaName",
+            "value": "dbo"
+          }
+        ]
+      },
+      {
+        "name": "Conductores",
         "columns": [
           {
             "name": "ConductorSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ConductorSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "ConductorID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ConductorID",
             "sourceProviderType": "Integer"
           },
@@ -192,17 +328,19 @@
         ]
       },
       {
-        "name": "Dim_Empleados",
+        "name": "Empleados",
         "columns": [
           {
             "name": "EmpleadoSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "EmpleadoSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "EmpleadoID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "EmpleadoID",
             "sourceProviderType": "Integer"
           },
@@ -264,17 +402,19 @@
         ]
       },
       {
-        "name": "Dim_Paradas",
+        "name": "Paradas",
         "columns": [
           {
             "name": "ParadaSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ParadaSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "ParadaID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ParadaID",
             "sourceProviderType": "Integer"
           },
@@ -330,17 +470,19 @@
         ]
       },
       {
-        "name": "Dim_Pasajeros",
+        "name": "Pasajeros",
         "columns": [
           {
             "name": "PasajeroSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "PasajeroSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "PasajeroID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "PasajeroID",
             "sourceProviderType": "Integer"
           },
@@ -396,17 +538,19 @@
         ]
       },
       {
-        "name": "Dim_Rutas",
+        "name": "Rutas",
         "columns": [
           {
             "name": "RutaSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "RutaSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "RutaID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "RutaID",
             "sourceProviderType": "Integer"
           },
@@ -468,17 +612,19 @@
         ]
       },
       {
-        "name": "Dim_Servicios",
+        "name": "Servicios",
         "columns": [
           {
             "name": "ServicioSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ServicioSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "ServicioID",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ServicioID",
             "sourceProviderType": "Integer"
           },
@@ -528,47 +674,53 @@
         ]
       },
       {
-        "name": "Fact_VentasServicios",
+        "name": "VentasServicios",
         "columns": [
           {
             "name": "VentaServicioSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "VentaServicioSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "Id_billete",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "Id_billete",
             "sourceProviderType": "Integer"
           },
           {
             "name": "ServicioSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ServicioSK",
             "sourceProviderType": "Integer"
           },
           {
-            "name": "FechaServicio",
-            "dataType": "string",
-            "sourceColumn": "FechaServicio",
-            "sourceProviderType": "WChar"
+            "name": "DateKey_billete",
+            "dataType": "int64",
+            "sourceColumn": "DateKey_billete",
+            "sourceProviderType": "Integer"
           },
           {
             "name": "RutaSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "RutaSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "AutobusSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "AutobusSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "ConductorSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ConductorSK",
             "sourceProviderType": "Integer"
           },
@@ -599,18 +751,21 @@
           {
             "name": "PasajeroSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "PasajeroSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "EmpleadoSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "EmpleadoSK",
             "sourceProviderType": "Integer"
           },
           {
             "name": "ParadaSK",
             "dataType": "int64",
+            "isHidden": true,
             "sourceColumn": "ParadaSK",
             "sourceProviderType": "Integer"
           }
@@ -624,6 +779,66 @@
               "query": " \t\t\t\tSELECT [dbo].[Fact_VentasServicios].*   FROM [dbo].[Fact_VentasServicios] ",
               "dataSource": "SqlServer DESKTOP-7CBKQ8C TurybusDW"
             }
+          }
+        ],
+        "measures": [
+          {
+            "name": "Venta Bruta Total",
+            "expression": " SUM(VentasServicios[IngresoTotal])"
+          },
+          {
+            "name": "Cantidad Billetes Total",
+            "expression": "sum(VentasServicios[CantidadBilletesVendidos])"
+          },
+          {
+            "name": "Minutos Billete Total",
+            "expression": "sum(VentasServicios[DuracionMinutos_billete])"
+          },
+          {
+            "name": "WOW Venta Bruta Total",
+            "expression": [
+              " ",
+              "VAR VentasSemanaActual = [Venta Bruta Total]",
+              "VAR VentasSemanaAnterior = ",
+              "    CALCULATE(",
+              "        [Venta Bruta Total],",
+              "        FILTER(",
+              "            ALL('Date'),",
+              "            'Date'[WeekOfYear] = MAX('Date'[WeekOfYear]) - 1 &&",
+              "            'Date'[YearNumber] = MAX('Date'[YearNumber])",
+              "        )",
+              "    )",
+              "",
+              "RETURN ",
+              "    IF(",
+              "        NOT ISBLANK(VentasSemanaActual) && NOT ISBLANK(VentasSemanaAnterior),",
+              "        VentasSemanaActual - VentasSemanaAnterior,",
+              "        BLANK()",
+              "    )"
+            ]
+          },
+          {
+            "name": "WOW % Venta Bruta Total",
+            "expression": [
+              " ",
+              "VAR VentasSemanaActual = [Venta Bruta Total]",
+              "VAR VentasSemanaAnterior = ",
+              "    CALCULATE(",
+              "        [Venta Bruta Total],",
+              "        FILTER(",
+              "            ALL('Date'),",
+              "            'Date'[WeekOfYear] = MAX('Date'[WeekOfYear]) - 1 &&",
+              "            'Date'[YearNumber] = MAX('Date'[YearNumber])",
+              "        )",
+              "    )",
+              "",
+              "RETURN ",
+              "    IF(",
+              "        ISBLANK(VentasSemanaAnterior) || VentasSemanaAnterior = 0,",
+              "        BLANK(),  -- Si no hay datos en la semana anterior, devuelve BLANK()",
+              "        DIVIDE(VentasSemanaActual - VentasSemanaAnterior, VentasSemanaAnterior, BLANK())",
+              "    )"
+            ]
           }
         ],
         "annotations": [
@@ -644,52 +859,59 @@
     ],
     "relationships": [
       {
-        "name": "aa3289d9-0ec3-4985-81a6-8b331079c35c",
-        "fromTable": "Fact_VentasServicios",
+        "name": "d16f9f52-d765-43e2-854c-ec3bf6df75c2",
+        "fromTable": "VentasServicios",
         "fromColumn": "AutobusSK",
-        "toTable": "Dim_AutobusesMantenimiento",
+        "toTable": "AutobusesMantenimiento",
         "toColumn": "AutobusSK"
       },
       {
-        "name": "663cefda-8749-4c73-9141-c1d1e4e6e964",
-        "fromTable": "Fact_VentasServicios",
+        "name": "6f49990a-c3bc-4704-a10d-ed8b08e229c2",
+        "fromTable": "VentasServicios",
+        "fromColumn": "DateKey_billete",
+        "toTable": "Date",
+        "toColumn": "DateKey"
+      },
+      {
+        "name": "8f471abd-c4ab-462f-8efd-e7f1bd2e013d",
+        "fromTable": "VentasServicios",
         "fromColumn": "ConductorSK",
-        "toTable": "Dim_Conductores",
+        "toTable": "Conductores",
         "toColumn": "ConductorSK"
       },
       {
-        "name": "4f6cbb98-08ec-483b-9d01-3d3e2afc7874",
-        "fromTable": "Fact_VentasServicios",
+        "name": "1054f02c-8a5d-4ba7-8975-ed4d36ccb92e",
+        "fromTable": "VentasServicios",
         "fromColumn": "EmpleadoSK",
-        "toTable": "Dim_Empleados",
+        "toTable": "Empleados",
         "toColumn": "EmpleadoSK"
       },
       {
-        "name": "8602e25e-8d66-48b2-a651-43fca06a75f7",
-        "fromTable": "Fact_VentasServicios",
+        "name": "93c3d353-b509-4974-a9c2-dfd31980f4e0",
+        "fromTable": "VentasServicios",
         "fromColumn": "ParadaSK",
-        "toTable": "Dim_Paradas",
+        "toTable": "Paradas",
         "toColumn": "ParadaSK"
       },
       {
-        "name": "18554c01-fdb0-4dc6-8abf-3418fe4a610b",
-        "fromTable": "Fact_VentasServicios",
+        "name": "6934b8ff-8a1b-43d4-9de6-c7cc9c00cda2",
+        "fromTable": "VentasServicios",
         "fromColumn": "PasajeroSK",
-        "toTable": "Dim_Pasajeros",
+        "toTable": "Pasajeros",
         "toColumn": "PasajeroSK"
       },
       {
-        "name": "d78c9e07-964a-41c5-8887-4b6a8607943d",
-        "fromTable": "Fact_VentasServicios",
+        "name": "19f8de41-e011-45a3-8b90-ac4e7f7e8c82",
+        "fromTable": "VentasServicios",
         "fromColumn": "RutaSK",
-        "toTable": "Dim_Rutas",
+        "toTable": "Rutas",
         "toColumn": "RutaSK"
       },
       {
-        "name": "8a56571c-3bbb-49a9-b121-3a9d311b2530",
-        "fromTable": "Fact_VentasServicios",
+        "name": "67139be2-30a5-4340-a84b-ad6ac5b2a067",
+        "fromTable": "VentasServicios",
         "fromColumn": "ServicioSK",
-        "toTable": "Dim_Servicios",
+        "toTable": "Servicios",
         "toColumn": "ServicioSK"
       }
     ],

@@ -8,7 +8,8 @@ BEGIN
 SELECT
     b.id_billete,
     sd.id_servicio,
-    b.fecha AS FechaBillete,  -- fecha del billete
+    -- Convertir FechaBillete a formato INT YYYYMMDD
+    CONVERT(INT, FORMAT(b.fecha, 'yyyyMMdd')) AS DateKey_billete, 
     sd.id_ruta,
     sd.id_autobus,
     sd.id_conductor,

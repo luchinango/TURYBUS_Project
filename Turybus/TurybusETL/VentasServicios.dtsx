@@ -11,8 +11,8 @@
   DTS:LocaleID="16394"
   DTS:ObjectName="VentasServicios"
   DTS:PackageType="5"
-  DTS:VersionBuild="75"
-  DTS:VersionGUID="{C2DCC15A-9AF0-493C-9540-D6273A7E6383}">
+  DTS:VersionBuild="76"
+  DTS:VersionGUID="{028BC263-D404-40A5-BCFB-F08AB3D7F32E}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
@@ -218,15 +218,6 @@
                       name="id_servicio"
                       truncationRowDisposition="FailComponent" />
                     <outputColumn
-                      refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].Columns[FechaBillete]"
-                      dataType="dbDate"
-                      errorOrTruncationOperation="Conversion"
-                      errorRowDisposition="FailComponent"
-                      externalMetadataColumnId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].ExternalColumns[FechaBillete]"
-                      lineageId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].Columns[FechaBillete]"
-                      name="FechaBillete"
-                      truncationRowDisposition="FailComponent" />
-                    <outputColumn
                       refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].Columns[id_ruta]"
                       dataType="i4"
                       errorOrTruncationOperation="Conversion"
@@ -320,6 +311,15 @@
                       lineageId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].Columns[id_billete]"
                       name="id_billete"
                       truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].Columns[DateKey_billete]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].ExternalColumns[DateKey_billete]"
+                      lineageId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].Columns[DateKey_billete]"
+                      name="DateKey_billete"
+                      truncationRowDisposition="FailComponent" />
                   </outputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -331,10 +331,6 @@
                       refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].ExternalColumns[id_servicio]"
                       dataType="i4"
                       name="id_servicio" />
-                    <externalMetadataColumn
-                      refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].ExternalColumns[FechaBillete]"
-                      dataType="dbDate"
-                      name="FechaBillete" />
                     <externalMetadataColumn
                       refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].ExternalColumns[id_ruta]"
                       dataType="i4"
@@ -379,6 +375,10 @@
                       refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].ExternalColumns[id_billete]"
                       dataType="i4"
                       name="id_billete" />
+                    <externalMetadataColumn
+                      refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].ExternalColumns[DateKey_billete]"
+                      dataType="i4"
+                      name="DateKey_billete" />
                   </externalMetadataColumns>
                 </output>
                 <output
@@ -397,10 +397,10 @@
                       lineageId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Error Output].Columns[id_servicio]"
                       name="id_servicio" />
                     <outputColumn
-                      refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Error Output].Columns[FechaBillete]"
-                      dataType="dbDate"
-                      lineageId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Error Output].Columns[FechaBillete]"
-                      name="FechaBillete" />
+                      refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Error Output].Columns[DateKey_billete]"
+                      dataType="i4"
+                      lineageId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Error Output].Columns[DateKey_billete]"
+                      name="DateKey_billete" />
                     <outputColumn
                       refId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Error Output].Columns[id_ruta]"
                       dataType="i4"
@@ -627,11 +627,11 @@
                       externalMetadataColumnId="Package\Load VentasServicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[VentaServicioSK]"
                       lineageId="Package\Load VentasServicios\Lookup VentasServicios.Outputs[Lookup Match Output].Columns[VentaServicioSK]" />
                     <inputColumn
-                      refId="Package\Load VentasServicios\Load Staging.Inputs[OLE DB Destination Input].Columns[FechaBillete]"
-                      cachedDataType="dbDate"
-                      cachedName="FechaBillete"
-                      externalMetadataColumnId="Package\Load VentasServicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[FechaServicio]"
-                      lineageId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].Columns[FechaBillete]" />
+                      refId="Package\Load VentasServicios\Load Staging.Inputs[OLE DB Destination Input].Columns[DateKey_billete]"
+                      cachedDataType="i4"
+                      cachedName="DateKey_billete"
+                      externalMetadataColumnId="Package\Load VentasServicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[DateKey_billete]"
+                      lineageId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].Columns[DateKey_billete]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -647,10 +647,6 @@
                       refId="Package\Load VentasServicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[ServicioSK]"
                       dataType="i4"
                       name="ServicioSK" />
-                    <externalMetadataColumn
-                      refId="Package\Load VentasServicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[FechaServicio]"
-                      dataType="dbDate"
-                      name="FechaServicio" />
                     <externalMetadataColumn
                       refId="Package\Load VentasServicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[RutaSK]"
                       dataType="i4"
@@ -695,6 +691,10 @@
                       refId="Package\Load VentasServicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[ParadaSK]"
                       dataType="i4"
                       name="ParadaSK" />
+                    <externalMetadataColumn
+                      refId="Package\Load VentasServicios\Load Staging.Inputs[OLE DB Destination Input].ExternalColumns[DateKey_billete]"
+                      dataType="i4"
+                      name="DateKey_billete" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -872,11 +872,11 @@
                       externalMetadataColumnId="Package\Load VentasServicios\Load VentasServicios.Inputs[OLE DB Destination Input].ExternalColumns[ServicioSK]"
                       lineageId="Package\Load VentasServicios\Lookup Servicios.Outputs[Lookup Match Output].Columns[ServicioSK]" />
                     <inputColumn
-                      refId="Package\Load VentasServicios\Load VentasServicios.Inputs[OLE DB Destination Input].Columns[FechaBillete]"
-                      cachedDataType="dbDate"
-                      cachedName="FechaBillete"
-                      externalMetadataColumnId="Package\Load VentasServicios\Load VentasServicios.Inputs[OLE DB Destination Input].ExternalColumns[FechaServicio]"
-                      lineageId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].Columns[FechaBillete]" />
+                      refId="Package\Load VentasServicios\Load VentasServicios.Inputs[OLE DB Destination Input].Columns[DateKey_billete]"
+                      cachedDataType="i4"
+                      cachedName="DateKey_billete"
+                      externalMetadataColumnId="Package\Load VentasServicios\Load VentasServicios.Inputs[OLE DB Destination Input].ExternalColumns[DateKey_billete]"
+                      lineageId="Package\Load VentasServicios\Get VentasServicios.Outputs[OLE DB Source Output].Columns[DateKey_billete]" />
                   </inputColumns>
                   <externalMetadataColumns
                     isUsed="True">
@@ -892,10 +892,6 @@
                       refId="Package\Load VentasServicios\Load VentasServicios.Inputs[OLE DB Destination Input].ExternalColumns[ServicioSK]"
                       dataType="i4"
                       name="ServicioSK" />
-                    <externalMetadataColumn
-                      refId="Package\Load VentasServicios\Load VentasServicios.Inputs[OLE DB Destination Input].ExternalColumns[FechaServicio]"
-                      dataType="dbDate"
-                      name="FechaServicio" />
                     <externalMetadataColumn
                       refId="Package\Load VentasServicios\Load VentasServicios.Inputs[OLE DB Destination Input].ExternalColumns[RutaSK]"
                       dataType="i4"
@@ -940,6 +936,10 @@
                       refId="Package\Load VentasServicios\Load VentasServicios.Inputs[OLE DB Destination Input].ExternalColumns[ParadaSK]"
                       dataType="i4"
                       name="ParadaSK" />
+                    <externalMetadataColumn
+                      refId="Package\Load VentasServicios\Load VentasServicios.Inputs[OLE DB Destination Input].ExternalColumns[DateKey_billete]"
+                      dataType="i4"
+                      name="DateKey_billete" />
                   </externalMetadataColumns>
                 </input>
               </inputs>
@@ -2562,13 +2562,49 @@ where [refTable].[Id_billete] = ?</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
-          Size="176,42.4"
-          Id="Package\Load VentasServicios\Get VentasServicios"
-          TopLeft="404.721427517323,9.96284958266049" />
+          Size="177.6,41.6"
+          Id="Package\Load VentasServicios\Load VentasServicios"
+          TopLeft="422.857143757294,319.647058543347" />
+        <NodeLayout
+          Size="145.6,42.4"
+          Id="Package\Load VentasServicios\Lookup Rutas"
+          TopLeft="690.630966053746,173.32949605981" />
+        <NodeLayout
+          Size="188.8,41.6"
+          Id="Package\Load VentasServicios\Lookup VentasServicios"
+          TopLeft="469.542857924408,251.011764550374" />
+        <NodeLayout
+          Size="157.6,42.4"
+          Id="Package\Load VentasServicios\Lookup Paradas"
+          TopLeft="306.277997227804,175.625705725053" />
         <NodeLayout
           Size="224,41.6"
           Id="Package\Load VentasServicios\Lookup AutobusMantenimiento"
           TopLeft="403.477932017331,86.8883474130204" />
+        <NodeLayout
+          Size="170.4,42.4"
+          Id="Package\Load VentasServicios\Lookup Empleados"
+          TopLeft="72.4943233237634,167.761205523557" />
+        <NodeLayout
+          Size="165.6,42.4"
+          Id="Package\Load VentasServicios\Lookup Pasajeros"
+          TopLeft="496.918071738692,173.07860205339" />
+        <NodeLayout
+          Size="161.6,42.4"
+          Id="Package\Load VentasServicios\Lookup Servicios"
+          TopLeft="682.673404970498,248.415941674867" />
+        <NodeLayout
+          Size="140,41.6"
+          Id="Package\Load VentasServicios\Load Staging"
+          TopLeft="274.485714667366,248.52941154686" />
+        <NodeLayout
+          Size="176,42.4"
+          Id="Package\Load VentasServicios\Get VentasServicios"
+          TopLeft="404.721427517323,9.96284958266049" />
+        <NodeLayout
+          Size="177.6,42.4"
+          Id="Package\Load VentasServicios\Lookup Conductores"
+          TopLeft="207.38717568117,97.7977904635086" />
         <EdgeLayout
           Id="Package\Load VentasServicios.Paths[OLE DB Source Output]"
           TopLeft="492.721427517323,52.3628495826605">
@@ -2603,174 +2639,90 @@ where [refTable].[Id_billete] = ?</property>
             <EdgeLabelCollection />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177.6,42.4"
-          Id="Package\Load VentasServicios\Lookup Conductores"
-          TopLeft="207.38717568117,97.7977904635086" />
         <EdgeLayout
-          Id="Package\Load VentasServicios.Paths[Lookup Match Output]"
-          TopLeft="479.477932017331,86.8883474130204">
+          Id="Package\Load VentasServicios.Paths[Lookup No Match Output]"
+          TopLeft="563.942857924408,292.611764550374">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-183.290756336161,10.9094430504882"
+              EndConnector="-52.2857141671136,27.0352939929726"
               Start="0,0"
-              End="-183.290756336161,3.40944305048825">
+              End="-52.2857141671136,19.5352939929726">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,-18.5" />
+                    End="0,9.51764699648632" />
                   <mssgle:CubicBezierSegment
-                    Point1="0,-18.5"
-                    Point2="0,-22.5"
-                    Point3="-4,-22.5" />
+                    Point1="0,9.51764699648632"
+                    Point2="0,13.5176469964863"
+                    Point3="-4,13.5176469964863" />
                   <mssgle:LineSegment
-                    End="-179.290756336161,-22.5" />
+                    End="-48.2857141671136,13.5176469964863" />
                   <mssgle:CubicBezierSegment
-                    Point1="-179.290756336161,-22.5"
-                    Point2="-183.290756336161,-22.5"
-                    Point3="-183.290756336161,-18.5" />
+                    Point1="-48.2857141671136,13.5176469964863"
+                    Point2="-52.2857141671136,13.5176469964863"
+                    Point3="-52.2857141671136,17.5176469964863" />
                   <mssgle:LineSegment
-                    End="-183.290756336161,3.40944305048825" />
+                    End="-52.2857141671136,19.5352939929726" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-139.836764886831,-17.5,96.3827734375,11.609375"
+              BoundingBox="-81.9492438023068,18.5176469964863,111.6127734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="170.4,42.4"
-          Id="Package\Load VentasServicios\Lookup Empleados"
-          TopLeft="72.4943233237634,167.761205523557" />
         <EdgeLayout
-          Id="Package\Load VentasServicios.Paths[Lookup Match Output1]"
-          TopLeft="296.18717568117,140.197790463509">
+          Id="Package\Load VentasServicios.Paths[Lookup Match Output7]"
+          TopLeft="469.542857924408,270.570588048617">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-138.492852357406,27.5634150600489"
+              EndConnector="-55.0571432570416,0"
               Start="0,0"
-              End="-138.492852357406,20.0634150600489">
+              End="-47.5571432570416,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.78170753002443" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.78170753002443"
-                    Point2="0,13.7817075300244"
-                    Point3="-4,13.7817075300244" />
-                  <mssgle:LineSegment
-                    End="-134.492852357406,13.7817075300244" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-134.492852357406,13.7817075300244"
-                    Point2="-138.492852357406,13.7817075300244"
-                    Point3="-138.492852357406,17.7817075300244" />
-                  <mssgle:LineSegment
-                    End="-138.492852357406,20.0634150600489" />
+                    End="-47.5571432570416,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-117.437812897453,18.7817075300244,96.3827734375,11.609375"
+              BoundingBox="-71.9699583472708,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="157.6,42.4"
-          Id="Package\Load VentasServicios\Lookup Paradas"
-          TopLeft="306.277997227804,175.625705725053" />
         <EdgeLayout
-          Id="Package\Load VentasServicios.Paths[Lookup Match Output2]"
-          TopLeft="242.894323323763,192.893455624305">
+          Id="Package\Load VentasServicios.Paths[Lookup Match Output6]"
+          TopLeft="682.673404970498,270.713853112621">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="63.3836739040408,0"
+              EndConnector="-24.33054704609,0"
               Start="0,0"
-              End="55.8836739040408,0">
+              End="-16.83054704609,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="55.8836739040408,0" />
+                    End="-16.83054704609,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-20.2495497667296,5,96.3827734375,11.609375"
+              BoundingBox="-56.606660241795,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="165.6,42.4"
-          Id="Package\Load VentasServicios\Lookup Pasajeros"
-          TopLeft="496.918071738692,173.07860205339" />
-        <EdgeLayout
-          Id="Package\Load VentasServicios.Paths[Lookup Match Output3]"
-          TopLeft="463.877997227804,195.552153889222">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="33.0400745108881,0"
-              Start="0,0"
-              End="25.5400745108881,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="25.5400745108881,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-35.4213494633059,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="145.6,42.4"
-          Id="Package\Load VentasServicios\Lookup Rutas"
-          TopLeft="690.630966053746,173.32949605981" />
-        <EdgeLayout
-          Id="Package\Load VentasServicios.Paths[Lookup Match Output4]"
-          TopLeft="662.518071738692,194.4040490566">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="28.1128943150536,0"
-              Start="0,0"
-              End="20.6128943150536,0">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="20.6128943150536,0" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-37.8849395612232,5,96.3827734375,11.609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="161.6,42.4"
-          Id="Package\Load VentasServicios\Lookup Servicios"
-          TopLeft="682.673404970498,248.415941674867" />
         <EdgeLayout
           Id="Package\Load VentasServicios.Paths[Lookup Match Output5]"
           TopLeft="763.430966053746,215.72949605981">
@@ -2807,99 +2759,147 @@ where [refTable].[Id_billete] = ?</property>
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="188.8,41.6"
-          Id="Package\Load VentasServicios\Lookup VentasServicios"
-          TopLeft="469.542857924408,251.011764550374" />
         <EdgeLayout
-          Id="Package\Load VentasServicios.Paths[Lookup Match Output6]"
-          TopLeft="682.673404970498,270.713853112621">
+          Id="Package\Load VentasServicios.Paths[Lookup Match Output4]"
+          TopLeft="662.518071738692,194.4040490566">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-24.33054704609,0"
+              EndConnector="28.1128943150536,0"
               Start="0,0"
-              End="-16.83054704609,0">
+              End="20.6128943150536,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-16.83054704609,0" />
+                    End="20.6128943150536,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-56.606660241795,5,96.3827734375,11.609375"
+              BoundingBox="-37.8849395612232,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="140,41.6"
-          Id="Package\Load VentasServicios\Load Staging"
-          TopLeft="273.057143235754,248.52941154686" />
         <EdgeLayout
-          Id="Package\Load VentasServicios.Paths[Lookup Match Output7]"
-          TopLeft="469.542857924408,270.570588048617">
+          Id="Package\Load VentasServicios.Paths[Lookup Match Output3]"
+          TopLeft="463.877997227804,195.552153889222">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-56.4857146886539,0"
+              EndConnector="33.0400745108881,0"
               Start="0,0"
-              End="-48.9857146886539,0">
+              End="25.5400745108881,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="-48.9857146886539,0" />
+                    End="25.5400745108881,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-72.684244063077,5,96.3827734375,11.609375"
+              BoundingBox="-35.4213494633059,5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="177.6,41.6"
-          Id="Package\Load VentasServicios\Load VentasServicios"
-          TopLeft="421.428572325682,318.882352661664" />
         <EdgeLayout
-          Id="Package\Load VentasServicios.Paths[Lookup No Match Output]"
-          TopLeft="563.942857924408,292.611764550374">
+          Id="Package\Load VentasServicios.Paths[Lookup Match Output2]"
+          TopLeft="242.894323323763,192.893455624305">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="-53.7142855987257,26.2705881112896"
+              EndConnector="63.3836739040408,0"
               Start="0,0"
-              End="-53.7142855987257,18.7705881112896">
+              End="55.8836739040408,0">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,9.13529405564481" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,9.13529405564481"
-                    Point2="0,13.1352940556448"
-                    Point3="-4,13.1352940556448" />
-                  <mssgle:LineSegment
-                    End="-49.7142855987257,13.1352940556448" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-49.7142855987257,13.1352940556448"
-                    Point2="-53.7142855987257,13.1352940556448"
-                    Point3="-53.7142855987257,17.1352940556448" />
-                  <mssgle:LineSegment
-                    End="-53.7142855987257,18.7705881112896" />
+                    End="55.8836739040408,0" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-82.6635295181129,18.1352940556448,111.6127734375,11.609375"
+              BoundingBox="-20.2495497667296,5,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load VentasServicios.Paths[Lookup Match Output1]"
+          TopLeft="296.18717568117,140.197790463509">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-138.492852357406,27.5634150600489"
+              Start="0,0"
+              End="-138.492852357406,20.0634150600489">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,9.78170753002443" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,9.78170753002443"
+                    Point2="0,13.7817075300244"
+                    Point3="-4,13.7817075300244" />
+                  <mssgle:LineSegment
+                    End="-134.492852357406,13.7817075300244" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-134.492852357406,13.7817075300244"
+                    Point2="-138.492852357406,13.7817075300244"
+                    Point3="-138.492852357406,17.7817075300244" />
+                  <mssgle:LineSegment
+                    End="-138.492852357406,20.0634150600489" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-117.437812897453,18.7817075300244,96.3827734375,11.609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Load VentasServicios.Paths[Lookup Match Output]"
+          TopLeft="479.477932017331,86.8883474130204">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-183.290756336161,10.9094430504882"
+              Start="0,0"
+              End="-183.290756336161,3.40944305048825">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-18.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-18.5"
+                    Point2="0,-22.5"
+                    Point3="-4,-22.5" />
+                  <mssgle:LineSegment
+                    End="-179.290756336161,-22.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-179.290756336161,-22.5"
+                    Point2="-183.290756336161,-22.5"
+                    Point3="-183.290756336161,-18.5" />
+                  <mssgle:LineSegment
+                    End="-183.290756336161,3.40944305048825" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-139.836764886831,-17.5,96.3827734375,11.609375"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -2907,102 +2907,15 @@ where [refTable].[Id_billete] = ?</property>
     </LayoutInfo>
   </TaskHost>
   <PipelineComponentMetadata
-    design-time-name="Package\Load VentasServicios\Get VentasServicios">
+    design-time-name="Package\Load VentasServicios\Load VentasServicios">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load VentasServicios\Lookup AutobusMantenimiento">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_AutobusesMantenimiento]</Value>
       </Property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load VentasServicios\Lookup Empleados">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Empleados]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load VentasServicios\Lookup Paradas">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Paradas]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load VentasServicios\Lookup Pasajeros">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Pasajeros]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
+          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
@@ -3012,7 +2925,7 @@ where [refTable].[Id_billete] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3022,30 +2935,7 @@ where [refTable].[Id_billete] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
-      </Property>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Load VentasServicios\Lookup Servicios">
-    <Properties>
-      <Property>
-        <Name>OverwriteParamsSQLProp</Name>
-        <Value
-          type="q2:boolean">false</Value>
-      </Property>
-      <Property>
-        <Name>UsedTableName</Name>
-        <Value
-          type="q3:string">[dbo].[Dim_Servicios]</Value>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3058,7 +2948,7 @@ where [refTable].[Id_billete] = ?</property>
       <Property>
         <Name>OverwriteParamsSQLProp</Name>
         <Value
-          type="q2:boolean">false</Value>
+          type="q2:string">false</Value>
       </Property>
       <Property>
         <Name>UsedTableName</Name>
@@ -3068,7 +2958,122 @@ where [refTable].[Id_billete] = ?</property>
       <Property>
         <Name>TableInfoObjectType</Name>
         <Value
-          type="q4:int">0</Value>
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load VentasServicios\Lookup Paradas">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Paradas]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load VentasServicios\Lookup AutobusMantenimiento">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_AutobusesMantenimiento]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load VentasServicios\Lookup Empleados">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Empleados]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load VentasServicios\Lookup Pasajeros">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Pasajeros]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
+      </Property>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Load VentasServicios\Lookup Servicios">
+    <Properties>
+      <Property>
+        <Name>OverwriteParamsSQLProp</Name>
+        <Value
+          type="q2:string">false</Value>
+      </Property>
+      <Property>
+        <Name>UsedTableName</Name>
+        <Value
+          type="q3:string">[dbo].[Dim_Servicios]</Value>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q4:string">0</Value>
       </Property>
       <Property>
         <Name>DataSourceViewID</Name>
@@ -3089,15 +3094,10 @@ where [refTable].[Id_billete] = ?</property>
     </Properties>
   </PipelineComponentMetadata>
   <PipelineComponentMetadata
-    design-time-name="Package\Load VentasServicios\Load VentasServicios">
+    design-time-name="Package\Load VentasServicios\Get VentasServicios">
     <Properties>
       <Property>
         <Name>DataSourceViewID</Name>
-      </Property>
-      <Property>
-        <Name>TableInfoObjectType</Name>
-        <Value
-          type="q2:string">Table</Value>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
