@@ -216,5 +216,11 @@ TURYBUS_Project\Turybus\TurybusVisuals\TurybusVisuals.pbix
 4️⃣ **Explorar los reportes e indicadores** de la solución **TURYBUS**.  
 
 
+---
+
+# 📄 Licencia
+
+Este proyecto está bajo la licencia **MIT**, lo que permite su uso, modificación y distribución sin restricciones significativas.  
+Consulta el archivo [`LICENSE`](LICENSE) para más detalles.
 
 
