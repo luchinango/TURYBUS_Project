@@ -92,7 +92,7 @@ TURYBUS_Project\Turybus\Turybus.sln
 3️⃣ **Seleccionar "Desde un archivo de respaldo (.bak)"**.  
 4️⃣ **Elegir el archivo ubicado en:** 
 ```sh
- TURYBUS_Project\Turybus\Turybus.sln
+ TURYBUS_Project\Turybus\Backup\TURYBUS_DB.bak
 ```
 
 5️⃣ **Ejecutar la restauración** y verificar que la base de datos esté lista.
@@ -104,7 +104,7 @@ TURYBUS_Project\Turybus\Turybus.sln
 ### 🔹 **Opción 1: Desplegar desde Visual Studio**
 1️⃣ **Abrir la solución de Visual Studio** desde:
 ```sh
-TURYBUS_Project\Turybus\TurybusDW.sln`
+TURYBUS_Project\Turybus\TurybusDW.sln
 ```
 2️⃣ **Ejecutar el Deploy** desde Visual Studio (`Build > Deploy`).  
 3️⃣ **Verificar en SQL Server** que las tablas y los datos se hayan cargado correctamente.  
