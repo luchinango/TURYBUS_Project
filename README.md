@@ -1,195 +1,220 @@
-# Proyecto TURYBUS
+# **Proyecto TURYBUS** 🚍
+---
 
-## Descripción del Proyecto
-
-TURYBUS es una empresa de transporte turístico que lanza una campaña estival ofreciendo servicios diarios para rutas seleccionadas. Cada servicio tiene un horario fijo y puede operar en días festivos o laborables. Los pasajeros reciben un billete con detalles del viaje y, para efectos promocionales, se registra el empleado que los atiende. También se llevan registros de revisiones y reparaciones de autobuses, con procedimientos específicos para su gestión.
-
-El sistema permite:
-
-1. **Gestionar Rutas e Itinerarios:**  
-   - Tabla `Rutas` para la información de cada ruta (nombre, descripción, costo base, km recorridos).  
-   - Tabla `Paradas` para representar el itinerario (lugares, hora prevista, actividad, tiempo de parada).
-
-2. **Administrar Servicios Diarios:**  
-   - Tabla `ServiciosDiarios` para programar las rutas con hora de salida, hora de llegada y días de operación.  
-   - Asignar un autobús y un conductor a cada servicio.
-
-3. **Registrar Pasajeros, Empleados y Billetes:**  
-   - Tabla `Pasajeros` para la información de cada cliente (DNI, nombre, apellidos, teléfono).  
-   - Tabla `Empleados` para el personal que atiende las ventas y se encarga de promociones.  
-   - Tabla `Billetes` para los viajes contratados (incluye `id_empleado` para registrar quién atendió la venta).
-
-4. **Controlar Autobuses y Conductores:**  
-   - Tabla `Autobuses` (matrícula, modelo, fabricante, plazas, características).  
-   - Tabla `Conductores` (DNI, nombre, apellidos, teléfono, dirección).  
-   - Procedimiento para asignar autobuses y conductores a los servicios.
-
-5. **Revisiones y Reparaciones de Autobuses:**  
-   - Tabla `Revisiones` para registrar fecha, diagnóstico y matrícula del autobús.  
-   - Tabla `Reparaciones` para detallar las reparaciones efectuadas (código, tiempo empleado, comentario).  
-   - Procedimiento `spRegistrarRevision` para crear una revisión y devolver su identificador.
-
-6. **Reportes y Consultas:**  
-   - **Media de viajeros** por ruta y servicio diario.  
-   - **Kilómetros diarios** por autobús y conductor (según la ruta asignada).  
-   - **Total de horas de viaje** por pasajero (para premiar a los mejores usuarios).  
-   - Uso de vistas, consultas y funciones definidas por el usuario.
+Implementación del sistema de gestión y análisis de datos para la empresa de transporte **Turybus**.  
+Este proyecto forma parte del módulo de *Data Management & Business Intelligence*, enfocado en la gestión de datos de **autobuses, rutas, pasajeros y ventas**.
 
 ---
 
-## Tecnologías y Herramientas
+### 📖 Más detalles sobre el modelado y estructura del proyecto
 
-- **SQL Server 2022 Developer Edition**: Motor de base de datos donde se despliega TURYBUS.  
-- **SQL Server Management Studio (SSMS)**: Para ejecutar scripts, administrar la base de datos y probar la lógica.  
-- **Visual Studio Community**: Para crear el proyecto de base de datos (`TURYBUS_OLTP.sqlproj`), organizar scripts y conectarse con Git.  
-- **GitHub**: Repositorio principal del proyecto (por ejemplo, [https://github.com/luchinango/TURYBUS_Project](https://github.com/luchinango/TURYBUS_Project)).
+Para conocer más sobre la arquitectura, modelado y estructura del proyecto **TURYBUS**, consulta la documentación completa en el siguiente enlace:
 
----
-
-## Estructura del Repositorio
-
-    /TURYBUS_Project
-    │
-    ├── /Scripts
-    │   ├── /DDL
-    │   │   ├── 01_CreateDatabase.sql
-    │   │   ├── 02_Rutas.sql
-    │   │   ├── 03_Paradas.sql
-    │   │   ├── 04_ServiciosDiarios.sql
-    │   │   ├── 05_Pasajeros.sql
-    │   │   ├── 06_Billetes.sql
-    │   │   ├── 07_Autobuses.sql
-    │   │   ├── 08_Conductores.sql
-    │   │   ├── 09_Revisiones.sql
-    │   │   └── 10_Reparaciones.sql
-    │   │   └── 12_empleados.sql
-    │   └── /DML
-    │       └── 11_InsertDatosPrueba.sql
-    │
-    ├── /StoredProcedures
-    │   ├── spInsertBillete.sql
-    │   ├── spAsignarAutobusConductor.sql
-    │   └── spRegistrarRevision.sql
-    │
-    ├── /UserDefinedFunctions
-    │   └── fnTotalHorasViaje.sql
-    │
-    ├── /Triggers
-    │   └── trgValidarCupoBillete.sql
-    │
-    ├── /Vistas
-    │   └── Vw_PromedioViajeros.sql
-    │
-    ├── /Consultas
-    │   ├── Consulta_KmDiarios.sql
-    │   └── Consulta_HorasViaje.sql
-    │
-    ├── /Documentacion
-    │   ├── TURYBUS_Diagrama_ER.pdf
-    │   └── Guia_TURYBUS.pdf
-    │
-    ├── README.md
-    └── TURYBUS.sln
----
-
-## Distribución de Tareas
-
-- **Caro**  
-  - `09_Revisiones.sql`, `10_Reparaciones.sql`, `spRegistrarRevision.sql`.  
-  - (Opcional) Tabla y lógica de **Empleados** si se decide que sea parte de Seguridad.
-
-- **Luis**  
-  - `07_Autobuses.sql`, `08_Conductores.sql`, `spAsignarAutobusConductor.sql`.
-
-- **Oscar**  
-  - `05_Pasajeros.sql`, `06_Billetes.sql` (con columna `id_empleado`), `spInsertBillete.sql`, `fnTotalHorasViaje.sql`, `Consulta_HorasViaje.sql`.
-
-- **Nicolas**  
-  - `04_ServiciosDiarios.sql`, `Vw_PromedioViajeros.sql`, `Consulta_KmDiarios.sql`, `trgValidarCupoBillete.sql`.
-
-- **Joseph**  
-  - `02_Rutas.sql`, `03_Paradas.sql`.
-
-- **Script de Datos de Prueba (`11_InsertDatosPrueba.sql`)**: Coordinado por todo el equipo para insertar registros de ejemplo.
+🔗 [Documentación del Proyecto](https://docs.google.com/document/d/10H9aQ5S33HvZorjhvyLHt-MemCIvxBwW9bISywuYGm4/edit?usp=drive_link)
 
 ---
 
-## Instrucciones de Despliegue
+### **📌Integrantes del Proyecto Turybus**
 
-### 1. Configuración en GitHub
-
-    1. **Creación del Repositorio**  
-    - Luis crea el repositorio en [https://github.com/luchinango/TURYBUS_Project](https://github.com/luchinango/TURYBUS_Project).  
-    - Da acceso al equipo para clonar y hacer commits.
-
-    2. **Clonar el Repositorio**  
-    ```bash
-    git clone https://github.com/luchinango/TURYBUS_Project.git 
-
-    3.	Estructura de Carpetas
-        Verifica que la estructura esté igual a la descrita arriba.
-
-    4.	Ramas y Pull Requests
-        Cada miembro crea su rama para las tareas asignadas: 
-        git checkout -b [nombre_usuario]_rutas
-        Al terminar cambios: 
-        git add .
-        git commit -m "Creación de tabla Rutas"
-        git push origin [nombre_usuario]_rutas
-        Crear un Pull Request en GitHub para integrar los cambios a la rama principal.
-
-### 2. SQL Server 2022 Developer Edition y SSMS
-
-    1.	Instalación
-        o	Instala SQL Server 2022 Developer Edition y SQL Server Management Studio (SSMS).
-
-    2.	Creación de la Base de Datos
-        o	Abre SSMS, conéctate a la instancia y ejecuta 01_CreateDatabase.sql para crear TURYBUS_DB.
-
-    3.	Ejecución de Scripts DDL
-        o	Ejecuta en orden los scripts en /Scripts/DDL/ (02_Rutas, 03_Paradas, 04_ServiciosDiarios, 05_Pasajeros, 06_Billetes, 07_Autobuses, 08_Conductores,      09_Revisiones, 10_Reparaciones, etc.).
-
-    4.	Inserción de Datos de Prueba
-        o	Ejecuta 11_InsertDatosPrueba.sql para poblar las tablas con ejemplos de rutas, paradas, pasajeros, empleados, billetes, autobuses, conductores, revisiones y reparaciones.
-
-    5.	Despliegue de Procedimientos, Funciones y Triggers
-        o	Ejecuta los archivos en /StoredProcedures/, /UserDefinedFunctions/ y /Triggers/ para habilitar la lógica de negocio (insertar billetes, asignar autobuses, registrar revisiones, validar cupo, etc.).
-
-    6.	Visual Studio Community (Proyecto de Base de Datos)
-        o	Abre TURYBUS.sln en Visual Studio.
-        o	Usa el proyecto TURYBUS_OLTP.sqlproj para administrar y publicar los scripts de forma automática si lo deseas (opcional).
-
-### 3. Verificación de Reportes y Lógica
-
-    1.	Vw_PromedioViajeros.sql
-    
-        SELECT * FROM Reportes.Vw_PromedioViajeros;
-
-        o	Verifica la media de viajeros por servicio y ruta.
+| **Avatar** | <img src="https://github.com/noportor.png" width="60"> | <img src="https://github.com/cbellob.png" width="60"> | <img src="https://github.com/oscarloayza.png" width="60"> | <img src="https://github.com/josephus-scriptor.png" width="60"> | <img src="https://github.com/luchinango.png" width="60"> |
+|-----------------------------|------------------------|------------------------|------------------------|--------------------------|-----------------------|
+| **Nombre**                  | Nicolas Oporto        | Carolina Bello        | Oscar Loayza          | Joseph Thenier          | Luis Martinez        |
+| **GitHub**                  | [@noportor](https://github.com/noportor) | [@cbellob](https://github.com/cbellob) | [@oscarloayza](https://github.com/oscarloayza) | [@josephus-scriptor](https://github.com/josephus-scriptor) | [@luchinango](https://github.com/luchinango) |
 
 
-    2.	Consulta_KmDiarios.sql
-    
-        -- Ver km recorridos según la ruta asignada a cada autobús
-
-        SELECT a.matricula, a.modelo, s.id_servicio, s.hora_salida, s.hora_llegada, r.km_recorrido
-        FROM Operaciones.Autobuses a
-        INNER JOIN Turismo.ServiciosDiarios s ON a.id_autobus = s.id_autobus
-        INNER JOIN Turismo.Rutas r ON s.id_ruta = r.id_ruta;
 
 
-    3.	Consulta_HorasViaje.sql
+---
 
-        SELECT p.nombre, p.apellidos, Operaciones.fnTotalHorasViaje(p.id_pasajero) AS total_horas
-        FROM Operaciones.Pasajeros p;
+## 🚀 **Instalación y Configuración**
 
-    4.	Empleados y Promociones
-        o	Se registra el id_empleado en la tabla Billetes para rastrear quién realizó la venta.
-        o	La lógica de promociones se puede implementar en la aplicación que consuma estos datos o con un procedimiento adicional si se desea.
+Antes de comenzar con la instalación y configuración del Proyecto Turybus, asegúrate de tener las siguientes herramientas instaladas en tu equipo.
 
-    5.	Revisiones y Reparaciones
-        o	Ejecutar spRegistrarRevision para crear una revisión y obtener el id_revision resultante.
-        o	Insertar reparaciones relacionadas en la tabla Reparaciones.
+---
 
-    6.	Triggers y Transacciones
-        o	Probar trgValidarCupoBillete insertando varios billetes para el mismo servicio y verificar que no se supere el número de plazas.
+| Herramienta/Extensión | Descripción | Enlace de Descarga |
+|------------------------|-------------|---------------------|
+| **Git** | Sistema de control de versiones para gestionar el código del proyecto. | [Descargar](https://git-scm.com/) |
+| **Visual Studio Community 2022** | Entorno de desarrollo para la creación y administración de proyectos de BI. | [Descargar](https://visualstudio.microsoft.com/downloads/) |
+| **SQL Server 2022** | Motor de base de datos para gestionar la información del proyecto. | [Descargar](https://www.microsoft.com/en-us/sql-server/sql-server-downloads) |
+| **SQL Server Management Studio (SSMS)** | Herramienta de administración para SQL Server. | [Descargar](https://docs.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver15) |
+| **Microsoft Data Tools Integration Services (SSIS)** | Extensión para desarrollar y ejecutar paquetes SSIS en Visual Studio. | [Descargar](https://marketplace.visualstudio.com/items?itemName=SSIS.MicrosoftDataToolsIntegrationServices) |
+| **Microsoft Analysis Services Modeling Projects** | Herramienta para modelado y gestión de Analysis Services en Visual Studio. | [Descargar](https://marketplace.visualstudio.com/items?itemName=ProBITools.MicrosoftAnalysisServicesModelingProjects2022) |
+| **Power BI Desktop** | Herramienta de análisis y visualización de datos. | [Descargar](https://www.microsoft.com/en-us/download/details.aspx?id=58494) |
+
+
+---
+
+## 📥 Clonar el Repositorio
+Para clonar este repositorio, ejecuta el siguiente comando en tu terminal:
+
+```bash
+git clone https://github.com/luchinango/TURYBUS_Project.git
+```
+
+---
+## ⚠ **Creación de Bases de Datos en SQL Server Management Studio (SSMS)**
+
+Antes de realizar cualquier despliegue, es necesario crear las bases de datos en **SQL Server** utilizando **SQL Server Management Studio (SSMS)**.
+
+### 🔹 **Pasos para Crear las Bases de Datos**
+1️⃣ **Abrir SQL Server Management Studio (SSMS)** y conectarse al servidor.  
+2️⃣ **Ejecutar los siguientes comandos en una nueva consulta:**
+
+
+
+```sql
+CREATE DATABASE TURYBUS_DB;
+GO
+```
+```sql
+CREATE DATABASE TurybusDW;
+GO
+```
+3️⃣ Verificar que las bases de datos se hayan creado correctamente en el explorador de objetos de SQL Server.
+4️⃣ Continuar con el despliegue de los sistemas en Visual Studio.
+
+---
+
+## 🚀 Deploy OLTP
+
+### 🔹 **Opción 1: Desplegar desde Visual Studio**
+1️⃣ **Abrir la solución de Visual Studio** desde:
+```sh
+TURYBUS_Project\Turybus\Turybus.sln
+```
+2️⃣ **Ejecutar el Deploy** desde Visual Studio (`Build > Deploy`).  
+3️⃣ **Verificar en SQL Server** que la base de datos y sus objetos se crearon correctamente.  
+
+### 🔹 **Opción 2: Restaurar desde Backup**
+1️⃣ **Abrir SQL Server Management Studio (SSMS)**.  
+2️⃣ **Ir a "Bases de datos" > Clic derecho > Restaurar Base de Datos**.  
+3️⃣ **Seleccionar "Desde un archivo de respaldo (.bak)"**.  
+4️⃣ **Elegir el archivo ubicado en:** 
+```sh
+ TURYBUS_Project\Turybus\Turybus.sln
+```
+
+5️⃣ **Ejecutar la restauración** y verificar que la base de datos esté lista.
+
+---
+
+## 🚀 Deploy Data Warehouse
+
+### 🔹 **Opción 1: Desplegar desde Visual Studio**
+1️⃣ **Abrir la solución de Visual Studio** desde:
+```sh
+TURYBUS_Project\Turybus\TurybusDW.sln`
+```
+2️⃣ **Ejecutar el Deploy** desde Visual Studio (`Build > Deploy`).  
+3️⃣ **Verificar en SQL Server** que las tablas y los datos se hayan cargado correctamente.  
+
+### 🔹 **Opción 2: Restaurar desde Backup**
+1️⃣ **Abrir SQL Server Management Studio (SSMS)**.  
+2️⃣ **Ir a "Bases de datos" > Clic derecho > Restaurar Base de Datos**.  
+3️⃣ **Seleccionar "Desde un archivo de respaldo (.bak)"**.  
+4️⃣ **Elegir el archivo ubicado en:** 
+```sh
+TURYBUS_Project\Turybus\Backup\TurybusDW.bak
+```
+5️⃣ **Ejecutar la restauración** y verificar que la base de datos esté lista.
+
+
+
+---
+
+## 🚀 Deploy Integration Services (SSIS)
+
+### 🔹 **Opción 1: Desplegar desde Visual Studio**
+1️⃣ **Abrir la solución de Visual Studio** desde:
+```sh
+TURYBUS_Project\Turybus\TurybusETL.sln
+```
+2️⃣ **Ejecutar los paquetes de integración (`.dtsx`) en el siguiente orden**:
+
+- 📂`AutobusesMantenimiento.dtsx`
+- 📂`Conductores.dtsx`
+- 📂`Empleado.dtsx`
+- 📂`Paradas.dtsx`
+- 📂`Pasajeros.dtsx`
+- 📂`Rutas.dtsx`
+- 📂`Servicios.dtsx`
+- 📂`VentasServicios.dtsx`
+  
+3️⃣ **Validar la ejecución de los paquetes** en SSIS y verificar la carga en el Data Warehouse.  
+
+### 🔹 **Opción 2: Restaurar desde Backup**
+1️⃣ **Abrir SQL Server Management Studio (SSMS)**.  
+2️⃣ **Abrir SQL Server Integration Services (SSIS) y desplegar el paquete**.  
+3️⃣ **Importar el paquete `.ispac` desde la ruta:**
+```sh
+TURYBUS_Project\Turybus\Backup\TurybusETL.ispac
+```
+4️⃣ **Ejecutar el paquete en SQL Server Agent o manualmente en SSIS**.
+
+## ⚡ (Opcional) Configurar un Job en SQL Server Agent
+
+Para programar la ejecución automática de los paquetes SSIS, sigue estos pasos:
+
+### 🔹 Crear el Job en SQL Server Agent
+1️⃣ **Abrir SQL Server Management Studio (SSMS)** y expandir `SQL Server Agent`.  
+2️⃣ **Clic derecho en `Jobs` > `New Job...`**.  
+3️⃣ En la pestaña **General**, asignar un nombre al Job (`Turybus_ETL_Job`).  
+4️⃣ Ir a la pestaña **Steps** y hacer clic en `New...`.  
+
+### 🔹 Configurar un Step para ejecutar SSIS
+1️⃣ En el campo **Type**, seleccionar `SQL Server Integration Services Package`.  
+2️⃣ En **Run as**, elegir `SQL Server Agent Service Account`.  
+3️⃣ En **Server**, ingresar la instancia de SQL Server.  
+4️⃣ En **Package Source**, elegir `File System` y buscar los paquetes `.dtsx`.  
+5️⃣ En **Command Line Parameters**, agregar opciones si es necesario.  
+6️⃣ Hacer clic en `OK`.  
+
+### 🔹 Configurar la Programación del Job
+1️⃣ Ir a la pestaña **Schedules** y hacer clic en `New...`.  
+2️⃣ Configurar la **frecuencia** (`Diaria`, `Semanal`, `Mensual`).  
+3️⃣ Especificar la **hora de ejecución** (`Ejemplo: Todos los días a las 02:00 AM`).  
+4️⃣ Hacer clic en `OK`.  
+
+### 🔹 Activar y Probar el Job
+1️⃣ **Guardar el Job** y asegurarse de que `SQL Server Agent` está `Running`.  
+2️⃣ **Ejecutar el Job manualmente** (`Clic derecho en el Job > Start Job at Step`).  
+3️⃣ **Revisar los logs en `Job Activity Monitor`** para verificar errores o confirmaciones.  
+
+---
+
+## 🚀 Deploy OLAP (Cubo SSAS)
+
+### 🔹 **Opción 1: Desplegar desde Visual Studio**
+1️⃣ **Abrir la solución de Visual Studio** desde:
+```sh
+TURYBUS_Project\Turybus\TurybusOLAP.sln
+```  
+2️⃣ **Ejecutar el Deploy** desde Visual Studio (`Build > Deploy`).  
+3️⃣ **Verificar en SSAS** que el cubo se haya procesado correctamente y probar consultas MDX o Power BI.  
+
+### 🔹 **Opción 2: Restaurar desde Backup**
+1️⃣ **Abrir SQL Server Management Studio (SSMS)** y conectar con **SQL Server Analysis Services (SSAS)**.  
+2️⃣ **Ir a "Bases de datos OLAP" > Clic derecho > Restaurar Base de Datos**.  
+3️⃣ **Seleccionar "Desde un archivo de respaldo (.abf)"**.  
+4️⃣ **Elegir el archivo ubicado en:** 
+```sh
+TURYBUS_Project\Turybus\Backup\TurybusOLAP.abf
+```
+
+---
+
+## 📊 Visualización en Power BI
+
+### 🔹 Pasos para abrir Power BI
+1️⃣ **Abrir Power BI Desktop** en tu computadora.  
+2️⃣ **Abrir el archivo `.pbix`. desde la ruta:**
+```sh
+TURYBUS_Project\Turybus\TurybusVisuals\TurybusVisuals.pbix
+```
+3️⃣ **Actualizar los datos** (`Refresh`) para asegurarte de que reflejan la información más reciente.  
+4️⃣ **Explorar los reportes e indicadores** de la solución **TURYBUS**.  
+
+
+
+
