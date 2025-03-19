@@ -42,6 +42,15 @@ Antes de comenzar con la instalación y configuración del Proyecto Turybus, ase
 | **Microsoft Analysis Services Modeling Projects** | Herramienta para modelado y gestión de Analysis Services en Visual Studio. | [Descargar](https://marketplace.visualstudio.com/items?itemName=ProBITools.MicrosoftAnalysisServicesModelingProjects2022) |
 | **Power BI Desktop** | Herramienta de análisis y visualización de datos. | [Descargar](https://www.microsoft.com/en-us/download/details.aspx?id=58494) |
 
+---
+
+## ⏯ **Video, Paso a Paso TURYBUS**
+
+En este video, te mostramos un recorrido completo por el proceso de implementación del sistema TURYBUS. Desde la instalación de herramientas esenciales hasta la configuración de bases de datos, despliegue de sistemas y análisis en Power BI.
+Aprenderás cómo clonar el repositorio, configurar SQL Server, ejecutar paquetes SSIS para la carga de datos y realizar consultas sobre el Data Warehouse. Además, exploraremos la visualización de reportes en Power BI y el despliegue de modelos OLAP en SSAS.
+
+📺 Míralo aquí:
+🔗 https://youtu.be/NRPV70Uv7gE
 
 ---
 
