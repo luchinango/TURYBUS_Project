@@ -78,54 +78,28 @@ GO
 
 ## 🚀 Deploy OLTP
 
-### 🔹 **Opción 1: Desplegar desde Visual Studio**
 1️⃣ **Abrir la solución de Visual Studio** desde:
 ```sh
 TURYBUS_Project\Turybus\Turybus.sln
 ```
-2️⃣ **Ejecutar el Deploy** desde Visual Studio (`Build > Deploy`).  
+2️⃣ **Ejecutar el Deploy** desde Visual Studio (`Build > Generate Script > Publish`).  
 3️⃣ **Verificar en SQL Server** que la base de datos y sus objetos se crearon correctamente.  
 
-### 🔹 **Opción 2: Restaurar desde Backup**
-1️⃣ **Abrir SQL Server Management Studio (SSMS)**.  
-2️⃣ **Ir a "Bases de datos" > Clic derecho > Restaurar Base de Datos**.  
-3️⃣ **Seleccionar "Desde un archivo de respaldo (.bak)"**.  
-4️⃣ **Elegir el archivo ubicado en:** 
-```sh
- TURYBUS_Project\Turybus\Backup\TURYBUS_DB.bak
-```
-
-5️⃣ **Ejecutar la restauración** y verificar que la base de datos esté lista.
-
----
 
 ## 🚀 Deploy Data Warehouse
 
-### 🔹 **Opción 1: Desplegar desde Visual Studio**
 1️⃣ **Abrir la solución de Visual Studio** desde:
 ```sh
 TURYBUS_Project\Turybus\TurybusDW.sln
 ```
-2️⃣ **Ejecutar el Deploy** desde Visual Studio (`Build > Deploy`).  
-3️⃣ **Verificar en SQL Server** que las tablas y los datos se hayan cargado correctamente.  
-
-### 🔹 **Opción 2: Restaurar desde Backup**
-1️⃣ **Abrir SQL Server Management Studio (SSMS)**.  
-2️⃣ **Ir a "Bases de datos" > Clic derecho > Restaurar Base de Datos**.  
-3️⃣ **Seleccionar "Desde un archivo de respaldo (.bak)"**.  
-4️⃣ **Elegir el archivo ubicado en:** 
-```sh
-TURYBUS_Project\Turybus\Backup\TurybusDW.bak
-```
-5️⃣ **Ejecutar la restauración** y verificar que la base de datos esté lista.
-
+2️⃣ **Ejecutar el Deploy** desde Visual Studio (`Build > Generate Script > Publish`).  
+3️⃣ **Verificar en SQL Server** que las tablas y los datos se hayan cargado correctamente. 
 
 
 ---
 
 ## 🚀 Deploy Integration Services (SSIS)
 
-### 🔹 **Opción 1: Desplegar desde Visual Studio**
 1️⃣ **Abrir la solución de Visual Studio** desde:
 ```sh
 TURYBUS_Project\Turybus\TurybusETL.sln
@@ -143,14 +117,7 @@ TURYBUS_Project\Turybus\TurybusETL.sln
   
 3️⃣ **Validar la ejecución de los paquetes** en SSIS y verificar la carga en el Data Warehouse.  
 
-### 🔹 **Opción 2: Restaurar desde Backup**
-1️⃣ **Abrir SQL Server Management Studio (SSMS)**.  
-2️⃣ **Abrir SQL Server Integration Services (SSIS) y desplegar el paquete**.  
-3️⃣ **Importar el paquete `.ispac` desde la ruta:**
-```sh
-TURYBUS_Project\Turybus\Backup\TurybusETL.ispac
-```
-4️⃣ **Ejecutar el paquete en SQL Server Agent o manualmente en SSIS**.
+
 
 ## ⚡ (Opcional) Configurar un Job en SQL Server Agent
 
@@ -185,22 +152,12 @@ Para programar la ejecución automática de los paquetes SSIS, sigue estos pasos
 
 ## 🚀 Deploy OLAP (Cubo SSAS)
 
-### 🔹 **Opción 1: Desplegar desde Visual Studio**
 1️⃣ **Abrir la solución de Visual Studio** desde:
 ```sh
 TURYBUS_Project\Turybus\TurybusOLAP.sln
 ```  
 2️⃣ **Ejecutar el Deploy** desde Visual Studio (`Build > Deploy`).  
 3️⃣ **Verificar en SSAS** que el cubo se haya procesado correctamente y probar consultas MDX o Power BI.  
-
-### 🔹 **Opción 2: Restaurar desde Backup**
-1️⃣ **Abrir SQL Server Management Studio (SSMS)** y conectar con **SQL Server Analysis Services (SSAS)**.  
-2️⃣ **Ir a "Bases de datos OLAP" > Clic derecho > Restaurar Base de Datos**.  
-3️⃣ **Seleccionar "Desde un archivo de respaldo (.abf)"**.  
-4️⃣ **Elegir el archivo ubicado en:** 
-```sh
-TURYBUS_Project\Turybus\Backup\TurybusOLAP.abf
-```
 
 ---
 
